@@ -21,7 +21,7 @@ export default function UpdateRegistrationForm() {
         uploadedfile: ""
     });
     const [teamMembers, setTeamMembers] = useState([{ name: "", rollNo: "" }]);
-    async function verifyEncryptedString() {
+    async function VerifyEncryptedString() {
         const searchParams=useSearchParams();
         const id=searchParams.get('id');
         const encryptedString =searchParams.get('encryptedString');
