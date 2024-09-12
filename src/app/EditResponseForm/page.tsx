@@ -3,9 +3,9 @@ import { useState } from "react";
 import axios from "axios";
 
 export default function EditResponseForm() {
-    let [email, setEmail] = useState("");
-    let [message, setMessage] = useState("");
-    let [loading, setLoading] = useState(false);
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [loading, setLoading] = useState(false);
 
     async function sendEmail() {
         setLoading(true);
@@ -13,7 +13,7 @@ export default function EditResponseForm() {
             if (email === "") {
                 setMessage('Email Field cannot be empty');
             } else {
-                let result = await axios.post('/api/sendEmail', { email: email });
+                const result = await axios.post('/api/sendEmail', { email: email });
                 console.log(result);
                 if (!result.data.success) {
                     setMessage('The team email does not exist');

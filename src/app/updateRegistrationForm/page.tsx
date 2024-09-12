@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 export default function updateRegistrationForm() {
-    let router=useRouter();
+    const router=useRouter();
     const searchParams = useSearchParams();
     const id = searchParams.get('id');
     const encryptedString = searchParams.get('encryptedString');
-    let [loading, setLoading] = useState(true);
-    let [message, setMessage] = useState("");
-    let [isLoading,setIsLoading]=useState(false);
+    const [loading, setLoading] = useState(true);
+    const [message, setMessage] = useState("");
+    const [isLoading,setIsLoading]=useState(false);
     const [error,setError]=useState("");
     const [data,setdata]=useState({
         _id:"",
@@ -30,7 +30,7 @@ export default function updateRegistrationForm() {
         }
         else {
             try {
-                let result = await axios.post('/api/verifyString', { id: id, encryptedString: encryptedString });
+                const result = await axios.post('/api/verifyString', { id: id, encryptedString: encryptedString });
                 if (result.data.success) {
                     setdata(result.data.res);
                     setTeamMembers(result.data.res.teamMembers);
@@ -69,7 +69,7 @@ export default function updateRegistrationForm() {
     async function updateData(sendData:any){
         try{
             setIsLoading(true);
-            let res=await axios.post("/api/updateData",sendData);
+            const res=await axios.post("/api/updateData",sendData);
             router.push('/formSubmitted');
         }
         catch(error){

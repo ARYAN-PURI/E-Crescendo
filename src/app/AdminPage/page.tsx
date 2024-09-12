@@ -4,12 +4,12 @@ import axios from "axios";
 import Link from "next/link";
 
 export default function AdminPage() {
-    let [data, setData] = useState([]); 
-    let [isLoading, setIsLoading] = useState(true);
+    const [data, setData] = useState([]); 
+    const [isLoading, setIsLoading] = useState(true);
 
     async function getdata() {
         try {
-            let result = await axios.get("/api/getData");
+            const result = await axios.get("/api/getData");
             setData(result.data.res);
             setIsLoading(false);
         } catch (error) {
@@ -31,7 +31,7 @@ export default function AdminPage() {
                     </div>
                 ) : (
                     <div>
-                        {data.map((val: any, index) => (
+                        {data.map((val: any, index:number) => (
                             <div key={index} className="bg-white shadow-lg rounded-lg p-6 md:px-10 flex flex-col md:flex-row justify-between my-5">
                                 <div className="md:w-[50%] w-full mb-6 md:mb-0">
                                     <div className="mb-4">

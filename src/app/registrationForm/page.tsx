@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 export default function RegistrationForm(){
-    let router=useRouter();
-    let [isLoading,setIsLoading]=useState(false);
+    const router=useRouter();
+    const [isLoading,setIsLoading]=useState(false);
     const [data,setdata]=useState({
         teamName:"",
         teamLeaderName:"",
@@ -39,7 +39,7 @@ export default function RegistrationForm(){
     async function submitData(sendData:any){
         try{
             setIsLoading(true);
-            let res=await axios.post("/api/submitData",sendData);
+            const res=await axios.post("/api/submitData",sendData);
             if(!res.data.success){
                 setError("Email Already Exits Try With Diffrent Account");
             }

@@ -2,13 +2,13 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 export default function AdminLogin() {
-    let router=useRouter();
-    let [isLoading,setisLoading]=useState(false);
-    let [user,setUser]=useState({
+    const router=useRouter();
+    const [isLoading,setisLoading]=useState(false);
+    const [user,setUser]=useState({
       userName:"",
       password:"",
     });
-    let [error,setError]=useState("");
+    const [error,setError]=useState("");
     function handleSubmit(){
         if(user.userName==process.env.NEXT_PUBLIC_USER_NAME! && user.password==process.env.NEXT_PUBLIC_PASSWORD!){
           setisLoading(true);
