@@ -1,9 +1,9 @@
-'use client'
+'use client';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState,Suspense } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
-export default function UpdateRegistrationForm() {
+function Child() {
     const searchParams=useSearchParams();
     const router = useRouter();
     const [loading, setLoading] = useState(true);
@@ -211,5 +211,15 @@ export default function UpdateRegistrationForm() {
                         </div>
                     }
         </div>
+    );
+}
+export default function UpdateRegistrationForm(){
+    return(
+        <Suspense fallback={
+        <div className="flex justify-center items-center">
+            <div className="text-lg mt-[20%] font-semibold bg-green-800 rounded text-white py-3 px-5">Loading Data...</div>
+        </div>}>
+            <Child />
+        </Suspense>
     );
 }
