@@ -94,7 +94,7 @@ export default function RegistrationForm(){
     return (
         <div className="flex flex-col">
             <h1 className="text-center text-3xl my-5">Please Fill the Form to register a Team</h1>
-            <div className="flex flex-col mx-[10%] md:mx-[20%] xl:mx-[30%]">
+            <div className="flex flex-col mx-[3%] md:mx-[20%] xl:mx-[30%]">
                 <div className="my-3">
                     <label htmlFor="teamName">Team Name: </label>
                     <input type="text" className="border-grey border rounded py-1 px-2" id="teamName" value={data.teamName} onChange={(e)=>{setdata({...data,teamName:e.target.value})}} />
