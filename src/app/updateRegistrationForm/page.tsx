@@ -1,14 +1,14 @@
 "use client";
-import { useSearchParams, useRouter } from 'next/navigation';
-import { Suspense, useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import {  useEffect, useState } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 
 export default function UpdateRegistrationForm() {
-    const router = useRouter();
-    const searchParams = useSearchParams();
-    const id = searchParams.get('id');
-    const encryptedString = searchParams.get('encryptedString');
+    const router=useRouter();
+    const url = new URL(window.location.href);
+    const id = url.searchParams.get('id');
+    const encryptedString = url.searchParams.get('encryptedString');
     const [message, setMessage] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
