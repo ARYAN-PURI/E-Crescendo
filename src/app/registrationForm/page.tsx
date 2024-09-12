@@ -32,7 +32,8 @@ export default function RegistrationForm(){
     }
     function handleMemberUpdate(index:number,e:any){
         const updatedmembers=[...teamMembers];
-        // @ts-ignore
+        // New
+        // @ts-expect-error: Ignoring type error because the function is intentionally invoked with incorrect types
         updatedmembers[index][e.target.name]=e.target.value;
         setTeamMembers(updatedmembers);
     }

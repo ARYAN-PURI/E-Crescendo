@@ -50,7 +50,7 @@ export default function UpdateRegistrationForm() {
     }
     useEffect(() => {
         verifyEncryptedString();
-    }, []);
+    }, [searchParams]);
 
     function handleMemberChange(e:any){
         setdata({...data,teamSize:parseInt(e.target.value)});
@@ -62,14 +62,15 @@ export default function UpdateRegistrationForm() {
     }
     function handleMemberUpdate(index:number,e:any){
         const updatedmembers=[...teamMembers];
-        // @ts-expect-error
+        // New
+        // @ts-expect-error: Ignoring type error because the function is intentionally invoked with incorrect types
         updatedmembers[index][e.target.name]=e.target.value;
         setTeamMembers(updatedmembers);
     }
     async function updateData(sendData:any){
         try{
             setIsLoading(true);
-            const res=await axios.post("/api/updateData",sendData);
+            await axios.post("/api/updateData",sendData);
             router.push('/formSubmitted');
         }
         catch(error){
