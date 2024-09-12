@@ -27,7 +27,7 @@ export default function Home() {
               Admin Panel
             </div>
           </Link>
-          <Link href="https://www.google.com">
+          <Link href="https://drive.google.com/drive/folders/1ScRvEIfU_QdZ1fFXGe4MLsqVfaa-zCpv?usp=drive_link">
             <div className="px-8 my-4 py-4 bg-gray-700 text-white font-bold rounded-lg shadow-lg transform transition hover:bg-gray-600 hover:scale-105 cursor-pointer">
               GuideLines
             </div>

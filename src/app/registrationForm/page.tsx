@@ -142,7 +142,7 @@ export default function RegistrationForm(){
                 </div>
 
                 <div className="my-3">
-                    <Link href={'https://www.google.com'} className="text-blue-600">Download The Sample Presentation</Link>
+                    <Link href={'https://drive.google.com/drive/folders/1ScRvEIfU_QdZ1fFXGe4MLsqVfaa-zCpv?usp=drive_link'} className="text-blue-600">Download The Sample Presentation</Link>
                 </div>
                 
                 <div className="my-3">

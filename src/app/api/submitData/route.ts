@@ -8,7 +8,7 @@ export async function POST(req:NextRequest){
         const reqBody=await req.json();
         const teamData=new teamModel({...reqBody});
         const result=await teamModel.find({email:reqBody.email});
-        if(!result){
+        if(result.length==0){
             const res=await teamData.save();
             const fieldUrl='https://e-crescendo.vercel.app/EditResponseForm';
             const mailOptions = {
