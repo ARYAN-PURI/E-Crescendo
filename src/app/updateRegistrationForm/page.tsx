@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 export default function UpdateRegistrationForm() {
+    const searchParams=useSearchParams();
     const router = useRouter();
     const [loading, setLoading] = useState(true);
     const [message, setMessage] = useState("");
@@ -21,8 +22,7 @@ export default function UpdateRegistrationForm() {
         uploadedfile: ""
     });
     const [teamMembers, setTeamMembers] = useState([{ name: "", rollNo: "" }]);
-    async function VerifyEncryptedString() {
-        const searchParams=useSearchParams();
+    async function verifyEncryptedString() {
         const id=searchParams.get('id');
         const encryptedString =searchParams.get('encryptedString');
         if (id == "" || encryptedString == "") {
@@ -50,7 +50,7 @@ export default function UpdateRegistrationForm() {
         }
     }
     useEffect(() => {
-        VerifyEncryptedString();
+        verifyEncryptedString();
     }, []);
 
     function handleMemberChange(e: any) {
