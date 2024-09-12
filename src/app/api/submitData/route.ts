@@ -10,7 +10,7 @@ export async function POST(req:NextRequest){
         const result=await teamModel.find({email:reqBody.email});
         if(!result){
             const res=await teamData.save();
-            const fieldUrl='https://localhost:3000/EditResponseForm';
+            const fieldUrl='https://e-crescendo.vercel.app/EditResponseForm';
             const mailOptions = {
                 from: process.env.EMAIL,
                 to: reqBody.email,

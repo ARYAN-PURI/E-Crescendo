@@ -20,7 +20,7 @@ export async function POST(req:NextRequest){
             encryptedString:encryptedString,
             encryptedStringExpiry:new Date(Date.now()+10*60*1000)
         });
-        const fieldUrl=`http://localhost:3000/updateRegistrationForm?encryptedString=${encryptedString}&id=${res._id}`;
+        const fieldUrl=`https://e-crescendo.vercel.app/updateRegistrationForm?encryptedString=${encryptedString}&id=${res._id}`;
         const mailOptions = {
             from: process.env.EMAIL,
             to: reqBody.email,
