@@ -50,7 +50,7 @@ export default function UpdateRegistrationForm() {
         }
     }
     useEffect(() => {
-        verifyEncryptedString();
+        VerifyEncryptedString();
     }, []);
 
     function handleMemberChange(e: any) {
