@@ -31,7 +31,7 @@ export default function AdminPage() {
                     </div>
                 ) : (
                     <div>
-                        {data.map((val: any, index:number) => (
+                        {data.map((val :any, index:number) => (
                             <div key={index} className="bg-white shadow-lg rounded-lg p-6 md:px-10 flex flex-col md:flex-row justify-between my-5">
                                 <div className="md:w-[50%] w-full mb-6 md:mb-0">
                                     <div className="mb-4">

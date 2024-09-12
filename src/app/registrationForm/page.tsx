@@ -24,14 +24,14 @@ export default function RegistrationForm(){
     const [error,setError]=useState("");
     function handleMemberChange(e:any){
         setdata({...data,teamSize:parseInt(e.target.value)});
-        let updatedTeamMembers=[];
+        const updatedTeamMembers=[];
         for(let i=0;i<e.target.value;i++){
             updatedTeamMembers.push({name:"",rollNo:""});
         }
         setTeamMembers(updatedTeamMembers);
     }
     function handleMemberUpdate(index:number,e:any){
-        let updatedmembers=[...teamMembers];
+        const updatedmembers=[...teamMembers];
         // @ts-ignore
         updatedmembers[index][e.target.name]=e.target.value;
         setTeamMembers(updatedmembers);

@@ -3,7 +3,7 @@ import { useSearchParams,useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
-export default function updateRegistrationForm() {
+export default function UpdateRegistrationForm() {
     const router=useRouter();
     const searchParams = useSearchParams();
     const id = searchParams.get('id');
@@ -54,15 +54,15 @@ export default function updateRegistrationForm() {
 
     function handleMemberChange(e:any){
         setdata({...data,teamSize:parseInt(e.target.value)});
-        let updatedTeamMembers=[];
+        const updatedTeamMembers=[];
         for(let i=0;i<e.target.value;i++){
             updatedTeamMembers.push({name:"",rollNo:""});
         }
         setTeamMembers(updatedTeamMembers);
     }
     function handleMemberUpdate(index:number,e:any){
-        let updatedmembers=[...teamMembers];
-        // @ts-ignore
+        const updatedmembers=[...teamMembers];
+        // @ts-expect-error
         updatedmembers[index][e.target.name]=e.target.value;
         setTeamMembers(updatedmembers);
     }

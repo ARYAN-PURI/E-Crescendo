@@ -1,7 +1,7 @@
 "use client";
 import {useRouter} from 'next/navigation';
 export default function FormSubmitted(){
-    let router=useRouter();
+    const router=useRouter();
     return (
         <div className="flex justify-center items-center min-h-screen bg-gray-100">
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">

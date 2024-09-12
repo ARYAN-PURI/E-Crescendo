@@ -1,6 +1,5 @@
 import connect from '@/dbConfig/connect';
 import teamModel from '@/models/teamModels';
-import transport from '@/app/helper/mailer';
 import { NextRequest, NextResponse } from "next/server";
 connect();
 export async function POST(req:NextRequest){

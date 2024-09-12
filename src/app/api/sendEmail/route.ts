@@ -16,7 +16,7 @@ export async function POST(req:NextRequest){
             const randomInd = Math.floor(Math.random() * characters.length);
             encryptedString += characters.charAt(randomInd);
         }
-        const upadatedRes=await teamModel.updateOne({_id:res._id},{
+        await teamModel.updateOne({_id:res._id},{
             encryptedString:encryptedString,
             encryptedStringExpiry:new Date(Date.now()+10*60*1000)
         });
