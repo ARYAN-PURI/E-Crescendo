@@ -116,6 +116,7 @@ export default function UpdateRegistrationForm() {
                     <div className="flex flex-col">
                         <h1 className="text-center text-3xl my-5">Please Update the Fields You Want</h1>
                         <div className="flex flex-col mx-[10%] md:mx-[20%] xl:mx-[30%]">
+                            {/* Form Fields */}
                             <div className="my-3">
                                 <label htmlFor="teamName">Team Name: </label>
                                 <input type="text" className="border-grey border rounded py-1 px-2" id="teamName" value={data.teamName} onChange={(e) => setData({ ...data, teamName: e.target.value })} />
