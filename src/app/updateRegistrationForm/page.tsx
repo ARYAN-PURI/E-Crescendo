@@ -1,13 +1,11 @@
-"use client";
-import { useRouter } from 'next/navigation';
+'use client'
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 export default function UpdateRegistrationForm() {
     const router = useRouter();
-    const url = new URL(window.location.href);
-    const id = url.searchParams.get('id');
-    const encryptedString = url.searchParams.get('encryptedString');
+    const searchParams=useSearchParams();
     const [loading, setLoading] = useState(true);
     const [message, setMessage] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -25,6 +23,8 @@ export default function UpdateRegistrationForm() {
     });
     const [teamMembers, setTeamMembers] = useState([{ name: "", rollNo: "" }]);
     async function verifyEncryptedString() {
+        const id=searchParams.get('id');
+        const encryptedString =searchParams.get('encryptedString');
         if (id == "" || encryptedString == "") {
             setLoading(false);
             setMessage("You are not Allowed to access this page");
@@ -51,7 +51,7 @@ export default function UpdateRegistrationForm() {
     }
     useEffect(() => {
         verifyEncryptedString();
-    }, [url]);
+    }, []);
 
     function handleMemberChange(e: any) {
         setdata({ ...data, teamSize: parseInt(e.target.value) });
