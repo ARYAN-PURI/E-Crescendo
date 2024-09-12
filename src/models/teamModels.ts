@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-let teamSchema=new mongoose.Schema({
+const teamSchema=new mongoose.Schema({
     teamName:{
         type:String,
         required:[true,'Please Provide the Team Name']
@@ -37,5 +37,5 @@ let teamSchema=new mongoose.Schema({
     }
 })
 
-let teamModel=mongoose.models.teams || mongoose.model('teams',teamSchema);
+const teamModel=mongoose.models.teams || mongoose.model('teams',teamSchema);
 export default teamModel;

@@ -5,8 +5,8 @@ import { NextRequest, NextResponse } from "next/server";
 connect();
 export async function POST(req:NextRequest){
     try{
-        let reqBody=await req.json();
-        let res=await teamModel.updateOne({_id:reqBody._id},
+        const reqBody=await req.json();
+        const res=await teamModel.updateOne({_id:reqBody._id},
             {
                 teamName:reqBody.teamName,
                 teamLeaderName:reqBody.teamLeaderName,

@@ -4,7 +4,7 @@ import {NextResponse } from "next/server";
 connect();
 export async function GET(){
     try{
-        let res=await teamModel.find({});
+        const res=await teamModel.find({});
         return NextResponse.json({message:"Teams Data Reterived",success:true,res},{status:200});
     }
     catch(error:any){

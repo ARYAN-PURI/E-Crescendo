@@ -4,8 +4,8 @@ import { NextRequest, NextResponse } from "next/server";
 connect();
 export async function POST(req:NextRequest){
     try{
-        let reqBody=await req.json();
-        let res=await teamModel.findOne({_id:reqBody.id});
+        const reqBody=await req.json();
+        const res=await teamModel.findOne({_id:reqBody.id});
         if(res.encryptedString==reqBody.encryptedString){
             if(res.encryptedStringExpiry>new Date(Date.now())){
                 return NextResponse.json({message:"Encrypted String Verified",success:true,res},{status:200});

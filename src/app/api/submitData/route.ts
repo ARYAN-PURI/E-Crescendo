@@ -5,12 +5,12 @@ import transport from '@/app/helper/mailer';
 connect();
 export async function POST(req:NextRequest){
     try{
-        let reqBody=await req.json();
-        let teamData=new teamModel({...reqBody});
-        let result=await teamModel.find({email:reqBody.email});
+        const reqBody=await req.json();
+        const teamData=new teamModel({...reqBody});
+        const result=await teamModel.find({email:reqBody.email});
         if(!result){
-            let res=await teamData.save();
-            let fieldUrl='https://localhost:3000/EditResponseForm';
+            const res=await teamData.save();
+            const fieldUrl='https://localhost:3000/EditResponseForm';
             const mailOptions = {
                 from: process.env.EMAIL,
                 to: reqBody.email,

@@ -5,9 +5,8 @@ import { NextRequest, NextResponse } from "next/server";
 connect();
 export async function POST(req:NextRequest){
     try{
-        let reqBody=await req.json();
-        let res=await teamModel.findOne({email:reqBody.email});
-        console.log(!res);
+        const reqBody=await req.json();
+        const res=await teamModel.findOne({email:reqBody.email});
         if(!res){
             return NextResponse.json({message:"Team Email Does Not Exist",success:false},{status:200});
         }
@@ -17,11 +16,11 @@ export async function POST(req:NextRequest){
             const randomInd = Math.floor(Math.random() * characters.length);
             encryptedString += characters.charAt(randomInd);
         }
-        let upadatedRes=await teamModel.updateOne({_id:res._id},{
+        const upadatedRes=await teamModel.updateOne({_id:res._id},{
             encryptedString:encryptedString,
             encryptedStringExpiry:new Date(Date.now()+10*60*1000)
         });
-        let fieldUrl=`http://localhost:3000/updateRegistrationForm?encryptedString=${encryptedString}&id=${res._id}`;
+        const fieldUrl=`http://localhost:3000/updateRegistrationForm?encryptedString=${encryptedString}&id=${res._id}`;
         const mailOptions = {
             from: process.env.EMAIL,
             to: reqBody.email,
