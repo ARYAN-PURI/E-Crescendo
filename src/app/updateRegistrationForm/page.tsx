@@ -5,7 +5,6 @@ import Link from 'next/link';
 import axios from 'axios';
 export default function UpdateRegistrationForm() {
     const router = useRouter();
-    const searchParams=useSearchParams();
     const [loading, setLoading] = useState(true);
     const [message, setMessage] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -23,6 +22,7 @@ export default function UpdateRegistrationForm() {
     });
     const [teamMembers, setTeamMembers] = useState([{ name: "", rollNo: "" }]);
     async function verifyEncryptedString() {
+        const searchParams=useSearchParams();
         const id=searchParams.get('id');
         const encryptedString =searchParams.get('encryptedString');
         if (id == "" || encryptedString == "") {
