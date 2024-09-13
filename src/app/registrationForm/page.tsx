@@ -146,9 +146,10 @@ export default function RegistrationForm(){
                 </div>
                 
                 <div className="my-3">
-                    <label htmlFor="uploadedFile">Enter The Link Of Uploaded Presentaion on Google Drive:</label><br/>
+                    <label htmlFor="uploadedFile">Enter The Link Of Uploaded Presentation on Google Drive:</label><br/>
                     <input type="text"  id="uploadedFile" className="border-grey border rounded py-1 px-2 w-[80%]" onChange={(e)=>{setdata({...data,uploadedfile:e.target.value})}} /><br/>
                     <div className="text-red-500">*Please Provide The Access to open the File</div>
+                    <div className="text-red-500">*Uploaded Prsentation Should be in the sample format as Sample Presentation</div>
                 </div>
                 
                 {!isLoading?

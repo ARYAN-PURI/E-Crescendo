@@ -11,11 +11,11 @@ export default function AdminLogin() {
     const [error,setError]=useState("");
     function handleSubmit(){
         if(user.userName==process.env.NEXT_PUBLIC_USER_NAME! && user.password==process.env.NEXT_PUBLIC_PASSWORD!){
-          setisLoading(true);
+            setisLoading(true);
             setError("");
             document.cookie=`token=${process.env.NEXT_PUBLIC_TOKEN}; max-age=3600; path=/`
-            setisLoading(false);
             router.push("/AdminPage");
+            setisLoading(false);
         }
         else{
             setError('Invalid Admin Credentials');
@@ -50,17 +50,11 @@ export default function AdminLogin() {
           </div>
           {
             isLoading?
-            <button
-            className="w-full px-4 py-2 bg-indigo-500 text-white font-medium rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          >
-            Loading...
-          </button>
+          <button
+            className="w-full px-4 py-2 bg-indigo-500 text-white font-medium rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">Loading...</button>
           :
           <button onClick={handleSubmit}
-            className="w-full px-4 py-2 bg-indigo-500 text-white font-medium rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          >
-            Login
-          </button>
+            className="w-full px-4 py-2 bg-indigo-500 text-white font-medium rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">Login</button>
           }
         </div>
         {error!==""?

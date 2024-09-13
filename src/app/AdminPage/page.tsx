@@ -10,6 +10,7 @@ export default function AdminPage() {
     async function getdata() {
         try {
             const result = await axios.get("/api/getData");
+            console.log(result.data.res);
             setData(result.data.res);
             setIsLoading(false);
         } catch (error) {
