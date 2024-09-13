@@ -10,8 +10,8 @@ export default function AdminLogin() {
     });
     const [error,setError]=useState("");
     function handleSubmit(){
-        if(user.userName==process.env.NEXT_PUBLIC_USER_NAME! && user.password==process.env.NEXT_PUBLIC_PASSWORD!){
-            setisLoading(true);
+      setisLoading(true);
+        if(user.userName==process.env.NEXT_PUBLIC_USER_NAME && user.password==process.env.NEXT_PUBLIC_PASSWORD){
             setError("");
             document.cookie=`token=${process.env.NEXT_PUBLIC_TOKEN}; max-age=3600; path=/`
             router.push("/AdminPage");
@@ -19,6 +19,7 @@ export default function AdminLogin() {
         }
         else{
             setError('Invalid Admin Credentials');
+            setisLoading(false);
         }
     }
   return (

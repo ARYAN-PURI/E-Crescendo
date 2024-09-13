@@ -9,7 +9,11 @@ export default function AdminPage() {
 
     async function getdata() {
         try {
-            const result = await axios.get("/api/getData");
+            const result = await axios.get("/api/getData",{
+                headers: {
+                    'Cache-Control': 'no-cache'
+                }}
+            );
             console.log(result.data.res);
             setData(result.data.res);
             setIsLoading(false);
