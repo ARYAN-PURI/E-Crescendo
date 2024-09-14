@@ -6,7 +6,7 @@ const nextConfig = {
     async headers() {
         return [
             {
-                source: '/(.*)', // Apply headers to all routes
+                source: '/(.*)',
                 headers: [
                     {
                         key: 'Cache-Control',
@@ -20,7 +20,7 @@ const nextConfig = {
         return [
             {
                 source: '/api/:path*',
-                destination: 'http://localhost:3000/api/:path*', // Ensure correct API routes
+                destination: 'https://e-crescendo.vercel.app/api/:path*',
             },
         ];
     },
