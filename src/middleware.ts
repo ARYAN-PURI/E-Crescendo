@@ -7,11 +7,7 @@ export function middleware(req:NextRequest){
           return NextResponse.redirect(new URL('/AdminLogin', req.url));
         }
         else{
-            const res = NextResponse.next();
-            res.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
-            res.headers.set('Expires', '0');
-            res.headers.set('Pragma', 'no-cache');
-            return res;
+            return NextResponse.next();
         }
     }
     return NextResponse.next();

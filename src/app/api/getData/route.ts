@@ -6,9 +6,6 @@ export async function GET(){
     try{
         const res=await teamModel.find();
         const response=NextResponse.json({message:"Teams Data Reterived",success:true,res},{status:200});
-        response.headers.set('Cache-Control', 'no-store, max-age=0');
-        response.headers.set('Expires', '0');
-        response.headers.set('Pragma', 'no-cache');
         return response;
     }
     catch(error:any){

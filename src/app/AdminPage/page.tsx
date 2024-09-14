@@ -7,7 +7,7 @@ export default function AdminPage() {
     const [isLoading, setIsLoading] = useState(true);
     async function getdata() {
         try {
-            const result = await axios.get("/api/getData");
+            const result = await axios.get(`/api/data?timestamp=${Date.now()}`);
             setData(result.data.res);
             setIsLoading(false);
         } catch (error) {
