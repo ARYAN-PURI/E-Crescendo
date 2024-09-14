@@ -7,7 +7,7 @@ export function middleware(req:NextRequest){
           return NextResponse.redirect(new URL('/AdminLogin', req.url));
         }
         else{
-            return NextResponse.next();
+            return NextResponse.next().headers.set('Cache-Control', 'no-store, max-age=0');;
         }
     }
     return NextResponse.next();

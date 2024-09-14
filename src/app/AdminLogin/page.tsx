@@ -1,7 +1,8 @@
 "use client";
-import Link from 'next/link';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 export default function AdminLogin() {
+  const router=useRouter();
     const [isCorrect ,setIsCorrect]=useState(false);
     const [user,setUser]=useState({
       userName:"",
@@ -48,7 +49,7 @@ export default function AdminLogin() {
           
           {
             isCorrect?
-            <div className=" text-center w-full px-4 my-4 py-2 bg-indigo-500 text-white font-medium rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"><Link href={'/AdminPage'}>Enter Admin Page</Link></div>
+            <div onClick={()=>{router.push('/AdminPage')}} className=" text-center w-full px-4 my-4 py-2 bg-indigo-500 text-white font-medium rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">Enter Admin Page</div>
             :
             <button onClick={handleLogin} className="w-full px-4 py-2 bg-indigo-500 text-white font-medium rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">Login</button>
           }
