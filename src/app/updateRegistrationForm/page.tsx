@@ -1,10 +1,10 @@
 'use client';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useState,Suspense } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 function Child() {
-    const searchParams=useSearchParams();
+    const searchParams = useSearchParams();
     const router = useRouter();
     const [loading, setLoading] = useState(true);
     const [message, setMessage] = useState("");
@@ -23,8 +23,8 @@ function Child() {
     });
     const [teamMembers, setTeamMembers] = useState([{ name: "", rollNo: "" }]);
     async function verifyEncryptedString() {
-        const id=searchParams.get('id');
-        const encryptedString =searchParams.get('encryptedString');
+        const id = searchParams.get('id');
+        const encryptedString = searchParams.get('encryptedString');
         if (id == "" || encryptedString == "") {
             setLoading(false);
             setMessage("You are not Allowed to access this page");
@@ -126,99 +126,204 @@ function Child() {
                         <div className="text-lg mt-[20%] font-semibold bg-green-800 rounded text-white py-3 px-5">Loading Data...</div>
                     </div>
                     :
-                    
-                    message!=="" ?
+
+                    message !== "" ?
                         <div className={`text-sm mt-[20%] text-center font-medium p-2 rounded-lg ${message.includes("not") ? "text-red-600 bg-red-100" : "text-green-600 bg-green-100"}`}>
                             {message}
                         </div>
                         :
                         <div>
-                            <div className="flex flex-col">
-                                <h1 className="text-center text-3xl my-5">Please Update the Fields You Want</h1>
-                                <div className="flex flex-col mx-[10%] md:mx-[20%] xl:mx-[30%]">
-                                    <div className="my-3">
-                                        <label htmlFor="teamName">Team Name: </label>
-                                        <input type="text" className="border-grey border rounded py-1 px-2" id="teamName" value={data.teamName} onChange={(e) => { setdata({ ...data, teamName: e.target.value }) }} />
-                                    </div>
+                            <div className="flex flex-col items-center py-10 bg-gradient-to-b from-blue-50 to-blue-100 min-h-screen">
+                                <h1 className="text-4xl font-semibold text-blue-900 mb-8 text-center">
+                                    Team Registration Form
+                                </h1>
+                                <div className="w-full max-w-4xl bg-white shadow-xl rounded-lg p-8 lg:p-12">
+                                    <div className="space-y-6">
+                                        <div>
+                                            <label htmlFor="teamName" className="block text-blue-700 font-medium">
+                                                Team Name
+                                            </label>
+                                            <input
+                                                type="text"
+                                                className="mt-1 w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                                id="teamName"
+                                                value={data.teamName}
+                                                onChange={(e) => {
+                                                    setdata({ ...data, teamName: e.target.value });
+                                                }}
+                                            />
+                                        </div>
 
-                                    <div className="my-3">
-                                        <label htmlFor="teamLeaderName">Team Leader Name: </label>
-                                        <input type="text" className="border-grey border rounded py-1 px-2" id="teamLeaderName" value={data.teamLeaderName} onChange={(e) => { setdata({ ...data, teamLeaderName: e.target.value }) }} />
-                                    </div>
+                                        <div>
+                                            <label htmlFor="teamLeaderName" className="block text-blue-700 font-medium">
+                                                Team Leader Name
+                                            </label>
+                                            <input
+                                                type="text"
+                                                className="mt-1 w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                                id="teamLeaderName"
+                                                value={data.teamLeaderName}
+                                                onChange={(e) => {
+                                                    setdata({ ...data, teamLeaderName: e.target.value });
+                                                }}
+                                            />
+                                        </div>
 
-                                    <div className="my-3">
-                                        <label htmlFor="TeamSize">Select Team Size: </label>
-                                        <select id="TeamSize" value={data.teamSize} onChange={handleMemberChange} className="border-black border rounded py-2 px-3">
-                                            <option value={3}>3 Members</option>
-                                            <option value={4}>4 Members</option>
-                                            <option value={5}>5 Members</option>
-                                        </select>
-                                    </div>
+                                        <div>
+                                            <label htmlFor="TeamSize" className="block text-blue-700 font-medium">
+                                                Team Size
+                                            </label>
+                                            <select
+                                                id="TeamSize"
+                                                value={data.teamSize}
+                                                onChange={handleMemberChange}
+                                                className="mt-1 w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                            >
+                                                <option value={3}>3 Members</option>
+                                                <option value={4}>4 Members</option>
+                                                <option value={5}>5 Members</option>
+                                            </select>
+                                        </div>
 
-                                    <div className="my-3">
-                                        <label htmlFor="contactNo">Enter Contact Number: </label>
-                                        <input type="number" id="contactNo" className="border-grey border rounded py-1 px-2" value={data.contactNo} onChange={(e) => { setdata({ ...data, contactNo: e.target.value }) }} />
-                                    </div>
+                                        <div>
+                                            <label htmlFor="contactNo" className="block text-blue-700 font-medium">
+                                                Contact Number
+                                            </label>
+                                            <input
+                                                type="number"
+                                                id="contactNo"
+                                                className="mt-1 w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                                value={data.contactNo}
+                                                onChange={(e) => {
+                                                    setdata({ ...data, contactNo: e.target.value });
+                                                }}
+                                            />
+                                        </div>
 
-                                    <div className="my-3">
-                                        <label htmlFor="email">Enter Email: </label>
-                                        <input type="email" id="email" className="border-grey border rounded py-1 px-2" value={data.email} onChange={(e) => { setdata({ ...data, email: e.target.value }) }} />
-                                    </div>
+                                        <div>
+                                            <label htmlFor="email" className="block text-blue-700 font-medium">
+                                                Email
+                                            </label>
+                                            <input
+                                                type="email"
+                                                id="email"
+                                                className="mt-1 w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                                value={data.email}
+                                                onChange={(e) => {
+                                                    setdata({ ...data, email: e.target.value });
+                                                }}
+                                            />
+                                        </div>
 
-                                    <div className="my-3">
-                                        <div>Enter Details of Team Members</div>
-                                        {
-                                            teamMembers.map((data, index) => (
-                                                <div key={index}>
-                                                    <input type="text" className="border-grey border rounded py-1 px-2 my-2 mr-4" placeholder="Name" name="name" value={teamMembers[index].name} onChange={(e) => { handleMemberUpdate(index, e) }} />
-                                                    <input type="text" className="border-grey border rounded py-1 px-2 my-2 " placeholder="Roll No" name="rollNo" value={teamMembers[index].rollNo} onChange={(e) => { handleMemberUpdate(index, e) }} />
+                                        <div>
+                                            <label className="block text-blue-700 font-medium">Team Members</label>
+                                            {teamMembers.map((data, index) => (
+                                                <div key={index} className="flex flex-col md:flex-row gap-4 mt-2">
+                                                    <input
+                                                        type="text"
+                                                        className="flex-grow border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                                        placeholder="Name"
+                                                        name="name"
+                                                        value={teamMembers[index].name}
+                                                        onChange={(e) => {
+                                                            handleMemberUpdate(index, e);
+                                                        }}
+                                                    />
+                                                    <input
+                                                        type="text"
+                                                        className="flex-grow border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                                        placeholder="Roll No"
+                                                        name="rollNo"
+                                                        value={teamMembers[index].rollNo}
+                                                        onChange={(e) => {
+                                                            handleMemberUpdate(index, e);
+                                                        }}
+                                                    />
                                                 </div>
-                                            ))
-                                        }
-                                    </div>
-
-                                    <div className="my-3">
-                                        <label htmlFor="projectTitle">Project Title: </label>
-                                        <input type="text" className="border-grey border rounded py-1 px-2" id="projectTitle" value={data.projectTitle} onChange={(e) => { setdata({ ...data, projectTitle: e.target.value }) }} />
-                                    </div>
-
-                                    <div className="my-3">
-                                        <Link href={'https://drive.google.com/drive/folders/1ScRvEIfU_QdZ1fFXGe4MLsqVfaa-zCpv?usp=drive_link'} className="text-blue-600">Download The Sample Presentation</Link>
-                                    </div>
-
-                                    <div className="my-3">
-                                        <label htmlFor="uploadedFile">Enter The Link Of Uploaded Presentaion on Google Drive:</label><br />
-                                        <input type="text" id="uploadedFile" value={data.uploadedfile} className="border-grey border rounded py-1 px-2 w-[80%]" onChange={(e) => { setdata({ ...data, uploadedfile: e.target.value }) }} /><br />
-                                        <div className="text-red-500">*Please Provide The Access to open the File</div>
-                                    </div>
-
-                                    {!isLoading ?
-                                        <div className="flex justify-center">
-                                            <button className=" my-5 py-2 px-4 bg-blue-800 rounded font-bold text-white hover:bg-blue-200 hover:text-black" onClick={handleSubmit}>Update Data</button>
+                                            ))}
                                         </div>
-                                        :
-                                        <div className="flex justify-center">
-                                            <div className=" my-5 py-2 px-4 bg-blue-800 rounded font-bold text-white hover:bg-blue-200 hover:text-black" >Submitting Response...</div>
+
+                                        <div>
+                                            <label htmlFor="projectTitle" className="block text-blue-700 font-medium">
+                                                Project Title
+                                            </label>
+                                            <input
+                                                type="text"
+                                                className="mt-1 w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                                id="projectTitle"
+                                                value={data.projectTitle}
+                                                onChange={(e) => {
+                                                    setdata({ ...data, projectTitle: e.target.value });
+                                                }}
+                                            />
                                         </div>
-                                    }
-                                    {error !== "" ?
-                                        <div className="bg-red-700 text-white my-4 w-auto py-2 px-5 rounded text-center text-lg">
-                                            {error}
+
+                                        <div>
+                                            <Link
+                                                href={
+                                                    "https://drive.google.com/drive/folders/1ScRvEIfU_QdZ1fFXGe4MLsqVfaa-zCpv?usp=drive_link"
+                                                }
+                                                className="text-blue-600 hover:underline"
+                                            >
+                                                Download The Sample Presentation
+                                            </Link>
                                         </div>
-                                        : null}
+
+                                        <div>
+                                            <label htmlFor="uploadedFile" className="block text-blue-700 font-medium">
+                                                Presentation File Link (Google Drive)
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="uploadedFile"
+                                                value={data.uploadedfile}
+                                                className="mt-1 w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                                onChange={(e) => {
+                                                    setdata({ ...data, uploadedfile: e.target.value });
+                                                }}
+                                            />
+                                            <p className="text-sm text-red-500 mt-2">
+                                                * Please provide access to open the file.
+                                            </p>
+                                            <p className="text-sm text-red-500">* Follow the sample presentation format.</p>
+                                        </div>
+
+                                        {!isLoading ? (
+                                            <div className="flex justify-center">
+                                                <button
+                                                    className="my-5 py-2 px-6 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition-colors"
+                                                    onClick={handleSubmit}
+                                                >
+                                                    Submit
+                                                </button>
+                                            </div>
+                                        ) : (
+                                            <div className="flex justify-center">
+                                                <div className="my-5 py-2 px-6 bg-blue-600 text-white font-semibold rounded-lg shadow">
+                                                    Submitting Response...
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {error !== "" && (
+                                            <div className="bg-red-600 text-white my-4 py-3 px-5 rounded-lg text-center">
+                                                {error}
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    }
+            }
         </div>
     );
 }
-export default function UpdateRegistrationForm(){
-    return(
+export default function UpdateRegistrationForm() {
+    return (
         <Suspense fallback={
-        <div className="flex justify-center items-center">
-            <div className="text-lg mt-[20%] font-semibold bg-green-800 rounded text-white py-3 px-5">Loading Data...</div>
-        </div>}>
+            <div className="flex justify-center items-center">
+                <div className="text-lg mt-[20%] font-semibold bg-green-800 rounded text-white py-3 px-5">Loading Data...</div>
+            </div>}>
             <Child />
         </Suspense>
     );

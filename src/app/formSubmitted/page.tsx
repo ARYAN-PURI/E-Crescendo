@@ -6,7 +6,7 @@ export default function FormSubmitted() {
     
     return (
         <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4 sm:px-6 lg:px-8">
-            <div className="bg-white p-6 sm:p-8 md:p-10 lg:p-12 rounded-lg shadow-lg text-center max-w-md w-full">
+            <div className="bg-white p-6 sm:p-8 md:p-10 lg:p-12 rounded-lg shadow-lg text-center max-w-3xl w-full">
                 <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-green-600">
                     Form Submitted Successfully!
                 </h1>

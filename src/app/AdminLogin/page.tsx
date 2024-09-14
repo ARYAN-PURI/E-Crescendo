@@ -1,25 +1,21 @@
 "use client";
+import Link from 'next/link';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 export default function AdminLogin() {
-    const router=useRouter();
-    const [isLoading,setisLoading]=useState(false);
+    const [isCorrect ,setIsCorrect]=useState(false);
     const [user,setUser]=useState({
       userName:"",
       password:"",
     });
     const [error,setError]=useState("");
-    function handleSubmit(){
-      setisLoading(true);
+    function handleLogin(){
         if(user.userName==process.env.NEXT_PUBLIC_USER_NAME && user.password==process.env.NEXT_PUBLIC_PASSWORD){
+            setIsCorrect(true);
             setError("");
             document.cookie=`token=${process.env.NEXT_PUBLIC_TOKEN}; max-age=3600; path=/`
-            router.push("/AdminPage");
-            setisLoading(false);
         }
         else{
             setError('Invalid Admin Credentials');
-            setisLoading(false);
         }
     }
   return (
@@ -49,13 +45,12 @@ export default function AdminLogin() {
               required
             />
           </div>
+          
           {
-            isLoading?
-          <button
-            className="w-full px-4 py-2 bg-indigo-500 text-white font-medium rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">Loading...</button>
-          :
-          <button onClick={handleSubmit}
-            className="w-full px-4 py-2 bg-indigo-500 text-white font-medium rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">Login</button>
+            isCorrect?
+            <div className=" text-center w-full px-4 my-4 py-2 bg-indigo-500 text-white font-medium rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"><Link href={'/AdminPage'}>Enter Admin Page</Link></div>
+            :
+            <button onClick={handleLogin} className="w-full px-4 py-2 bg-indigo-500 text-white font-medium rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">Login</button>
           }
         </div>
         {error!==""?

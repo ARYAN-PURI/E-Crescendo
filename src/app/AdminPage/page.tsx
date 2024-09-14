@@ -2,30 +2,21 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-
 export default function AdminPage() {
     const [data, setData] = useState([]); 
     const [isLoading, setIsLoading] = useState(true);
-
     async function getdata() {
         try {
-            const result = await axios.get("/api/getData",{
-                headers: {
-                    'Cache-Control': 'no-cache'
-                }}
-            );
-            console.log(result.data.res);
+            const result = await axios.get("/api/getData");
             setData(result.data.res);
             setIsLoading(false);
         } catch (error) {
             console.log(error);
         }
     }
-
     useEffect(() => {
         getdata();
     }, []);
-
     return (
         <div className="min-h-screen bg-gray-100 p-6">
             <h1 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-6">Data of Registered Teams</h1>
