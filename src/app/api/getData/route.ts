@@ -5,7 +5,8 @@ connect();
 export async function GET(){
     try{
         const res=await teamModel.find();
-        const response=NextResponse.json({message:"Teams Data Reterived",success:true,res},{status:200});
+        const response=NextResponse.json({message:"Teams Data Reterived",success:true,res, timestamp: new Date().toISOString() },{status:200});
+        response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate');
         return response;
     }
     catch(error:any){
