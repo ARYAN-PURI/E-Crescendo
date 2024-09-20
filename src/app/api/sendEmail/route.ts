@@ -46,7 +46,7 @@ export async function POST(req:NextRequest){
                 <p>If you have any questions or encounter any issues, please feel free to contact our support team.</p>
                 
                 <p style="margin-top: 30px;">Best Regards,</p>
-                <p><b>The E-Crescendo Team</b></p>
+                <p><b>The E-Cell Team</b></p>
                 
                 <hr style="border: none; height: 1px; background-color: #ddd; margin: 20px 0;">
                 

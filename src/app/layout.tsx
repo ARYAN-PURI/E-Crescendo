@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="https://scontent.fdel11-4.fna.fbcdn.net/v/t39.30808-6/327161510_597989052337515_7104703843847278293_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=ANySIjBKGDMQ7kNvgHyBCaH&_nc_ht=scontent.fdel11-4.fna&_nc_gid=Ao2cGpscj3Jxvi3I9V9UvB0&oh=00_AYAaRRAXQXpa8j3zNZkERMaA68_uzwKcSWSMUzdTaLEOLQ&oe=66E8BDDB" />
+      <link rel="icon" href="https://scontent.fixc3-1.fna.fbcdn.net/v/t39.30808-1/327161510_597989052337515_7104703843847278293_n.jpg?stp=dst-jpg_s200x200&_nc_cat=102&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=dHTuwaZtTzEQ7kNvgHSbGcH&_nc_ht=scontent.fixc3-1.fna&_nc_gid=Ay4tQaNdccSXm230_xTb7KP&oh=00_AYChHwyWsojnRZP90p3-1s-Iu4vE1pKbyH7sDNdwVK8nhw&oe=66EE6B5D" sizes="any" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
