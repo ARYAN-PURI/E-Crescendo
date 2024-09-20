@@ -255,7 +255,7 @@ export default function Home() {
         placeholder="Write your query"
         value={data.query}
         onChange={(e) => { setData({ ...data, query: e.target.value }) }}
-        rows="2"
+        rows={2}
       ></textarea>
     </div>
 
