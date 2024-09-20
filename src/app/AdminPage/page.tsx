@@ -7,13 +7,14 @@ export default function AdminPage() {
     const [isLoading, setIsLoading] = useState(true);
     async function getdata() {
         try {
-            const result = await axios.get(`/api/getData?timestamp=${Date.now()}`,{
+            const result = await axios.get(`/api/getData`,{
                 headers: {
                     'Cache-Control': 'no-cache, no-store, must-revalidate',
                     'Pragma': 'no-cache',
                     'Expires': '0'
                 }
             });
+            console.log(result);
             setData(result.data.res);
             setIsLoading(false);
         } catch (error) {

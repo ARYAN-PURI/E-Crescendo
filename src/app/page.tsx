@@ -100,7 +100,7 @@ export default function Home() {
             <div className="absolute -left-5 top-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center transition-transform transform group-hover:scale-125 shadow-lg ">
               📅
             </div>
-            <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-indigo-700 to-indigo-500 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
+            <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
               <h3 className="text-xl font-bold mb-2 text-white group-hover:text-indigo-200 transition-colors duration-300">REGISTRATION BEGINS</h3>
               <p className="font-semibold text-indigo-200">22nd September, 2024</p>
               <p className="mt-2 text-gray-300">Your initial steps into the realm of developing a startup</p>
@@ -111,7 +111,7 @@ export default function Home() {
             <div className="absolute -left-5 top-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center transition-transform transform group-hover:scale-125 shadow-lg">
               📅
             </div>
-            <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-indigo-700 to-indigo-500 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
+            <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
               <h3 className="text-xl font-bold mb-2 text-white group-hover:text-indigo-200 transition-colors duration-300">INTERNAL SCREENING</h3>
               <p className="font-semibold text-indigo-200">(Date to be Announced)</p>
               <p className="mt-2 text-gray-300">Shortlisting based on the worth of the idea and the caliber of the team members</p>
@@ -122,7 +122,7 @@ export default function Home() {
             <div className="absolute -left-5 top-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center transition-transform transform group-hover:scale-125 shadow-lg">
               📅
             </div>
-            <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-indigo-700 to-indigo-500 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
+            <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
               <h3 className="text-xl font-bold mb-2 text-white group-hover:text-indigo-200 transition-colors duration-300">FACULTY SCREENING</h3>
               <p className="font-semibold text-indigo-200">(Date to be Announced)</p>
               <p className="mt-2 text-gray-300">The final pitch! Convince the faculties and woohoo, the funds are yours.</p>
