@@ -8,7 +8,7 @@ export function middleware(req:NextRequest){
         }
         else{
             const response=NextResponse.next();
-            response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate');
+            response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate,proxy-revalidate');
             return response;
         }
     }

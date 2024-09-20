@@ -7,9 +7,9 @@ export default function AdminPage() {
     const [isLoading, setIsLoading] = useState(true);
     async function getdata() {
         try {
-            const result = await axios.get(`/api/getData`,{
+            const result = await axios.get(`/api/getDatanocache=${Date.now()}`,{
                 headers: {
-                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Cache-Control': 'no-cache, no-store, must-revalidate,proxy-revalidate',
                     'Pragma': 'no-cache',
                     'Expires': '0'
                 }
