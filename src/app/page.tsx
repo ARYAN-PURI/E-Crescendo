@@ -142,7 +142,6 @@ export default function Home() {
               </span>
               <h3 className="ml-4 text-xl font-bold text-indigo-300">Presentation Format</h3>
             </div>
-            target="_blank" 
           </div>
 
           <div className=" hover:border-white hover:border bg-gradient-to-br from-gray-800 to-gray-600 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
@@ -287,8 +286,8 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div className="flex space-x-8 justify-center items-center">
-              <img src="/logo.png" alt="Sponsor 1" className="h-12 transform rounded-lg hover:scale-110" />
-              <img src="/ecell.png" alt="Sponsor 2" className="h-20 transform rounded-lg hover:scale-110" />
+              <Image src="/logo.png" alt="Sponsor 1" width={65} height={50} className="transform rounded-lg hover:scale-110" />
+              <Image src="/ecell.png" alt="Sponsor 2" width={85} height={70} className="transform rounded-lg hover:scale-110" />
             </div>
             <div className="text-center text-gray-300">
               <p>Powered By Team E-Cell &copy; 2024</p>
