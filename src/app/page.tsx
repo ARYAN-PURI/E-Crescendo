@@ -101,9 +101,9 @@ export default function Home() {
               📅
             </div>
             <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
-              <h3 className="text-xl font-bold mb-2 text-white group-hover:text-indigo-200 transition-colors duration-300">REGISTRATION BEGINS</h3>
-              <p className="font-semibold text-indigo-200">22nd September, 2024</p>
-              <p className="mt-2 text-gray-300">Your initial steps into the realm of developing a startup</p>
+              <h3 className="text-xl font-bold mb-2 text-slate-900 group-hover:text-indigo-200 transition-colors duration-300">REGISTRATION BEGINS</h3>
+              <p className="font-semibold text-green-300">22nd September, 2024</p>
+              <p className="mt-2 text-yellow-300">Your initial steps into the realm of developing a startup</p>
             </div>
           </div>
 
@@ -112,9 +112,9 @@ export default function Home() {
               📅
             </div>
             <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
-              <h3 className="text-xl font-bold mb-2 text-white group-hover:text-indigo-200 transition-colors duration-300">INTERNAL SCREENING</h3>
-              <p className="font-semibold text-indigo-200">(Date to be Announced)</p>
-              <p className="mt-2 text-gray-300">Shortlisting based on the worth of the idea and the caliber of the team members</p>
+              <h3 className="text-xl font-bold mb-2 text-slate-900 group-hover:text-indigo-200 transition-colors duration-300">INTERNAL SCREENING</h3>
+              <p className="font-semibold text-green-300">(Date to be Announced)</p>
+              <p className="mt-2 text-yellow-300">Shortlisting based on the worth of the idea and the caliber of the team members</p>
             </div>
           </div>
 
@@ -123,9 +123,9 @@ export default function Home() {
               📅
             </div>
             <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
-              <h3 className="text-xl font-bold mb-2 text-white group-hover:text-indigo-200 transition-colors duration-300">FACULTY SCREENING</h3>
-              <p className="font-semibold text-indigo-200">(Date to be Announced)</p>
-              <p className="mt-2 text-gray-300">The final pitch! Convince the faculties and woohoo, the funds are yours.</p>
+              <h3 className="text-xl font-bold mb-2 text-slate-900 group-hover:text-indigo-200 transition-colors duration-300">FACULTY SCREENING</h3>
+              <p className="font-semibold text-green-300">(Date to be Announced)</p>
+              <p className="mt-2 text-yellow-300">The final pitch! Convince the faculties and woohoo, the funds are yours.</p>
             </div>
           </div>
         </div>
@@ -142,11 +142,7 @@ export default function Home() {
               </span>
               <h3 className="ml-4 text-xl font-bold text-indigo-300">Presentation Format</h3>
             </div>
-            <ul className="list-disc list-inside text-gray-300 space-y-2 pl-2">
-              <li>Use clear and concise language.</li>
-              <li>Include visuals, graphs, or prototypes.</li>
-              <li>Highlight unique aspects of your project.</li>
-            </ul>
+            target="_blank" 
           </div>
 
           <div className=" hover:border-white hover:border bg-gradient-to-br from-gray-800 to-gray-600 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
@@ -299,7 +295,7 @@ export default function Home() {
               <p>Creating Future Innovators</p>
             </div>
             <div className="flex space-x-6 justify-center">
-              <a href="https://www.facebook.com/eclubnith/" className="rounded-3xl hover:scale-110">
+              <a href="https://www.facebook.com/eclubnith/" target="_blank" className="rounded-3xl hover:scale-110">
                 <Image
                   src="/facebook.png"
                   alt="Logo"
@@ -307,7 +303,7 @@ export default function Home() {
                   height={35}
                 />
               </a>
-              <a href="https://x.com/ecellnith?lang=en&mx=2" className="rounded-3xl hover:scale-110">
+              <a href="https://x.com/ecellnith?lang=en&mx=2" target="_blank" className="rounded-3xl hover:scale-110">
                 <Image
                   src="/twitter.svg"
                   alt="Logo"
@@ -315,7 +311,15 @@ export default function Home() {
                   height={35}
                 />
               </a>
-              <a href="https://www.linkedin.com/company/entrepreneurshipcellnith/?originalSubdomain=in" className="rounded-3xl hover:scale-110">
+              <a href="https://www.instagram.com/ecell_nith/?hl=en" target="_blank" className="rounded-3xl hover:scale-110">
+                <Image
+                  src="/insta.svg"
+                  alt="Logo"
+                  width={35}
+                  height={35}
+                />
+              </a>
+              <a href="https://www.linkedin.com/company/entrepreneurshipcellnith/?originalSubdomain=in" target="_blank" className="rounded-3xl hover:scale-110">
                 <Image
                   src="/linkdin.webp"
                   alt="Logo"
@@ -323,7 +327,7 @@ export default function Home() {
                   height={35}
                 />
               </a>
-              <a href="mailto:entrepreneurshipcellnith@gmail.com" className="rounded-3xl hover:scale-110">
+              <a href="mailto:entrepreneurshipcellnith@gmail.com" target="_blank" className="rounded-3xl hover:scale-110">
                 <Image
                   src="/gmail.svg"
                   alt="Logo"
