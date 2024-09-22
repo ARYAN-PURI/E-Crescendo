@@ -142,6 +142,11 @@ export default function Home() {
               </span>
               <h3 className="ml-4 text-xl font-bold text-indigo-300">Presentation Format</h3>
             </div>
+            <ul className="list-disc list-inside text-gray-300 space-y-2 pl-2">
+              <li>Use clear and concise language.</li>
+              <li>Include visuals, graphs, or prototypes.</li>
+              <li>Highlight unique aspects of your project.</li>
+            </ul>
           </div>
 
           <div className=" hover:border-white hover:border bg-gradient-to-br from-gray-800 to-gray-600 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
