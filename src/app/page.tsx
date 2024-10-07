@@ -37,9 +37,9 @@ export default function Home() {
           email: "",
           query: ""
         });
-        setLoading(false);
       }
     }
+    setLoading(false);
     
   }
   return (
@@ -243,11 +243,11 @@ export default function Home() {
       ></textarea>
     </div>
 
-    <div className="flex items-center justify-center">
+    <div className="flex flex-col items-center justify-center">
       {
         loading ?
           <button
-            className="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-indigo-500 transition-colors duration-300"
+            className="w-full my-2 bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-indigo-500 transition-colors duration-300"
           >
             Submitting...
           </button>
@@ -261,7 +261,7 @@ export default function Home() {
       }
       {
         error !== "" ?
-          <div className={"text-sm font-medium p-2 rounded-lg text-red-600 bg-red-100"}>{error}</div>
+          <div className={"font-bold p-2 rounded-lg text-red-600 bg-red-100"}>{error}</div>
           :
           null
       }
