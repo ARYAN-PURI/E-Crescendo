@@ -1,8 +1,9 @@
 'use client';
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import axios from 'axios';
+import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
 export default function Home() {
   const [data, setData] = useState({
     name: "",
@@ -38,29 +39,7 @@ export default function Home() {
   }
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-700 via-gray-900 to-black text-white">
-      <nav className="w-full bg-black bg-opacity-50 fixed top-0 z-50 shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="text-2xl font-bold text-indigo-400 flex items-center">
-              <Image
-                src="/logo.png"
-                alt="Logo"
-                width={75}
-                height={75}
-              />
-              E-Crescendo
-            </div>
-            <div className="space-x-8 hidden md:flex">
-              <a href="#home" className="text-white text-xl hover:text-indigo-400 transition">Home</a>
-              <a href="#timeline" className="text-white text-xl hover:text-indigo-400 transition">Timeline</a>
-              <a href="#instructions" className="text-white text-xl hover:text-indigo-400 transition">Instructions</a>
-              <a href="#apply" className="text-white text-xl hover:text-indigo-400 transition">How to Apply</a>
-              <a href="#contact" className="text-white text-xl hover:text-indigo-400 transition">Contact Us</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
+      <NavBar/>
       <section id="home" className="min-h-screen flex flex-col items-center justify-center px-4 mt-20">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-center">
           Welcome to <span className="text-indigo-400">E-Crescendo</span>
@@ -284,65 +263,7 @@ export default function Home() {
     </div>
   </div>
 </section>
-
-
-
-      <footer className="w-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-10">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            <div className="flex space-x-8 justify-center items-center">
-              <Image src="/logo.png" alt="Sponsor 1" width={65} height={50} className="transform rounded-lg hover:scale-110" />
-              <Image src="/ecell.png" alt="Sponsor 2" width={85} height={70} className="transform rounded-lg hover:scale-110" />
-            </div>
-            <div className="text-center text-gray-300">
-              <p>Powered By Team E-Cell &copy; 2024</p>
-              <p>Creating Future Innovators</p>
-            </div>
-            <div className="flex space-x-6 justify-center">
-              <a href="https://www.facebook.com/eclubnith/" target="_blank" className="rounded-3xl hover:scale-110">
-                <Image
-                  src="/facebook.png"
-                  alt="Logo"
-                  width={35}
-                  height={35}
-                />
-              </a>
-              <a href="https://x.com/ecellnith?lang=en&mx=2" target="_blank" className="rounded-3xl hover:scale-110">
-                <Image
-                  src="/twitter.svg"
-                  alt="Logo"
-                  width={35}
-                  height={35}
-                />
-              </a>
-              <a href="https://www.instagram.com/ecell_nith/?hl=en" target="_blank" className="rounded-3xl hover:scale-110">
-                <Image
-                  src="/insta.svg"
-                  alt="Logo"
-                  width={35}
-                  height={35}
-                />
-              </a>
-              <a href="https://www.linkedin.com/company/entrepreneurshipcellnith/?originalSubdomain=in" target="_blank" className="rounded-3xl hover:scale-110">
-                <Image
-                  src="/linkdin.webp"
-                  alt="Logo"
-                  width={35}
-                  height={35}
-                />
-              </a>
-              <a href="mailto:entrepreneurshipcellnith@gmail.com" target="_blank" className="rounded-3xl hover:scale-110">
-                <Image
-                  src="/gmail.svg"
-                  alt="Logo"
-                  width={35}
-                  height={35}
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+    <Footer/>
     </div>
   );
 }

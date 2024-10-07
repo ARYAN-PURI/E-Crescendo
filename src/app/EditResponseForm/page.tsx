@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import axios from "axios";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 export default function EditResponseForm() {
     const [email, setEmail] = useState("");
@@ -31,9 +33,11 @@ export default function EditResponseForm() {
     }
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
-            <div className="bg-white shadow-lg p-6 rounded-lg max-w-md w-full">
-                <h1 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-800 text-center">Enter the Registered Email</h1>
+        <div className="flex flex-col items-center justify-between bg-gradient-to-br  from-gray-700 via-gray-900 to-black min-h-screen">
+            <NavBar/>
+            <div className="px-3">
+            <div className="bg-white shadow-lg p-6 rounded-lg max-w-md w-full my-[70%] sm:my-[60%]lg:my-[55%]">
+                <h1 className="text-2xl md:text-2xl font-semibold mb-4 text-gray-800 text-center">Enter the Registered Email</h1>
                 <input
                     type="email"
                     value={email}
@@ -67,6 +71,8 @@ export default function EditResponseForm() {
                     )}
                 </div>
             </div>
+            </div>
+            <Footer/>
         </div>
     );
 }

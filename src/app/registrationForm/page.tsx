@@ -3,7 +3,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-
+import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 export default function RegistrationForm() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
@@ -88,8 +89,10 @@ export default function RegistrationForm() {
   }
 
   return (
-    <div className="flex flex-col items-center py-10 bg-gradient-to-b from-blue-50 to-blue-100 min-h-screen">
-      <h1 className="text-4xl font-semibold text-blue-900 mb-8 text-center">
+    <div>
+      <NavBar/>
+    <div className="flex flex-col items-center py-20 bg-gradient-to-br  from-gray-700 via-gray-900 to-black min-h-screen">
+      <h1 className="text-4xl font-semibold text-white my-8 text-center">
         Team Registration Form
       </h1>
       <div className="w-full max-w-4xl bg-white shadow-xl rounded-lg p-8 lg:p-12">
@@ -266,6 +269,8 @@ export default function RegistrationForm() {
           )}
         </div>
       </div>
+      </div>
+      <Footer/>
     </div>
   );
 }

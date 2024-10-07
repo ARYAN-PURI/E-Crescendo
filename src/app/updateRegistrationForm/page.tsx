@@ -3,6 +3,8 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState, Suspense } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 function Child() {
     const searchParams = useSearchParams();
     const router = useRouter();
@@ -25,7 +27,7 @@ function Child() {
     async function verifyEncryptedString() {
         const id = searchParams.get('id');
         const encryptedString = searchParams.get('encryptedString');
-        if (id == "" || encryptedString == "") {
+        if (!id || !encryptedString) {
             setLoading(false);
             setMessage("You are not Allowed to access this page");
         }
@@ -119,22 +121,23 @@ function Child() {
     }
 
     return (
-        <div>
+        <div className='bg-gradient-to-br  from-gray-700 via-gray-900 to-black min-h-screen'>
             {
                 loading ?
                     <div className="flex justify-center items-center">
-                        <div className="text-lg mt-[20%] font-semibold bg-green-800 rounded text-white py-3 px-5">Loading Data...</div>
+                        <div className="text-lg mt-[20%] font-semibold bg-green-600 rounded text-white py-3 px-5">Loading Data...</div>
                     </div>
                     :
 
                     message !== "" ?
-                        <div className={`text-sm mt-[20%] text-center font-medium p-2 rounded-lg ${message.includes("not") ? "text-red-600 bg-red-100" : "text-green-600 bg-green-100"}`}>
-                            {message}
+                        <div className='flex items-center justify-center '>
+                            <div className="text-lg mt-[20%] font-semibold bg-red-500 rounded text-white py-3 px-5">{message}</div>
                         </div>
                         :
                         <div>
-                            <div className="flex flex-col items-center py-10 bg-gradient-to-b from-blue-50 to-blue-100 min-h-screen">
-                                <h1 className="text-4xl font-semibold text-blue-900 mb-8 text-center">
+                            <NavBar/>
+                            <div className="flex flex-col items-center py-20 bg-gradient-to-br  from-gray-700 via-gray-900 to-black min-h-screen">
+                                <h1 className="text-4xl font-semibold text-white mt-8 text-center">
                                     Team Registration Form
                                 </h1>
                                 <div className="w-full max-w-4xl bg-white shadow-xl rounded-lg p-8 lg:p-12">
@@ -313,6 +316,7 @@ function Child() {
                                     </div>
                                 </div>
                             </div>
+                            <Footer/>
                         </div>
             }
         </div>

@@ -1,6 +1,8 @@
 "use client";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 export default function AdminLogin() {
   const router=useRouter();
     const [isCorrect ,setIsCorrect]=useState(false);
@@ -20,8 +22,10 @@ export default function AdminLogin() {
         }
     }
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-6 rounded-lg shadow-md w-96">
+    <div className="flex items-center flex-col justify-between bg-gradient-to-br  from-gray-700 via-gray-900 to-black min-h-screen  bg-gray-100">
+      <NavBar/>
+      <div className='px-3'>
+      <div className="bg-white p-6 rounded-lg shadow-md w-96 my-[75%] sm:my-[60%] md:my-[50%] lg:my-[40%]">
         <h1 className="text-2xl font-bold mb-4 text-center">Admin Login</h1>
         <div>
           <div className="mb-4">
@@ -60,6 +64,8 @@ export default function AdminLogin() {
             </div>
         :null}
       </div>
+      </div>
+      <Footer/>
     </div>
   );
 }
