@@ -24,13 +24,7 @@ export default function AdminPage() {
     }
     async function getdata() {
         try {
-            const result = await axios.get(`/api/getData?nocache=${Date.now()}`, {
-                headers: {
-                    'Cache-Control': 'no-cache, no-store, must-revalidate,proxy-revalidate',
-                    'Pragma': 'no-cache',
-                    'Expires': '0'
-                }
-            });
+            const result = await axios.get(`/api/getData`);
             console.log(result);
             setData(result.data.res);
             setIsLoading(false);
