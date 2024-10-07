@@ -15,27 +15,32 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   async function sendQuery() {
     setLoading(true);
-    try{
-      const result=await axios.post('/api/sendQuery',data);
-      if(!result.data.success){
-        setError('The Error Has Been Occured While Submitting Query')
+    if(data.name=="" && data.mobile=="" && data.email=="" && data.query==""){
+      setError("Fill the Fields First");
+    }else{
+      try{
+        const result=await axios.post('/api/sendQuery',data);
+        if(!result.data.success){
+          setError('The Error Has Been Occured While Submitting Query')
+        }
+        else{
+          setError("");
+        }
       }
-      else{
-        setError("");
+      catch(error){
+        console.log(error);
+      }
+      finally {
+        setData({
+          name: "",
+          mobile: "",
+          email: "",
+          query: ""
+        });
+        setLoading(false);
       }
     }
-    catch(error){
-      console.log(error);
-    }
-    finally {
-      setData({
-        name: "",
-        mobile: "",
-        email: "",
-        query: ""
-      });
-      setLoading(false);
-    }
+    
   }
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-700 via-gray-900 to-black text-white">
