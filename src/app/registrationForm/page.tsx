@@ -5,6 +5,9 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+
 export default function RegistrationForm() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
@@ -95,10 +98,11 @@ export default function RegistrationForm() {
       <h1 className="text-4xl font-semibold text-white my-8 text-center">
         Team Registration Form
       </h1>
+      <div className="flex flex-col items-center py-20 bg-gradient-to-br  from-gray-700 via-gray-800 to-black  max-w-3xl rounded-md ">
       <div className="w-full max-w-4xl bg-white shadow-xl rounded-lg p-8 lg:p-12">
         <div className="space-y-6">
           <div>
-            <label htmlFor="teamName" className="block text-blue-700 font-medium">
+            <label htmlFor="teamName" className="block text-blue-800 font-medium ">
               Team Name
             </label>
             <input
@@ -135,28 +139,49 @@ export default function RegistrationForm() {
               id="TeamSize"
               value={data.teamSize}
               onChange={handleMemberChange}
-              className="mt-1 w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="mt-1 w-full border font-medium border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             >
-              <option value={3}>3 Members</option>
-              <option value={4}>4 Members</option>
-              <option value={5}>5 Members</option>
+              <option value={3} className="text-slate-700">3 Members</option>
+              <option value={4}  className="text-slate-700">4 Members</option>
+              <option value={5} className="text-slate-700" >5 Members</option>
             </select>
           </div>
 
           <div>
-            <label htmlFor="contactNo" className="block text-blue-700 font-medium">
-              Contact Number
-            </label>
-            <input
-              type="number"
-              id="contactNo"
-              className="mt-1 w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              value={data.contactNo}
-              onChange={(e) => {
-                setdata({ ...data, contactNo: e.target.value });
-              }}
-            />
-          </div>
+  <label htmlFor="contactNo" className="block text-blue-700 font-medium">
+    Contact Number
+  </label>
+  <PhoneInput
+    country={'in'} // Default country
+    value={data.contactNo}
+    onChange={(phone) => setdata({ ...data, contactNo: phone })}
+    inputProps={{
+      name: 'contactNo',
+      required: true,
+      autoFocus: false,
+    }}
+    containerClass="mt-1 w-full border border-gray-300 rounded-lg focus-within:ring-2 focus-within:ring-blue-500 focus-within:outline-none" 
+    inputStyle={{
+      paddingLeft: '3rem', // distance between flag and code
+      width: '100%',
+      paddingTop: '1.3rem',
+      paddingBottom: '1.3rem',
+      border: '1px solid #ccc',
+      borderRadius: '8px',
+      outline: 'none',
+      transition: 'box-shadow 0.2s ease-in-out',
+    }}
+    buttonStyle={{
+      border: 'none',
+      background: 'transparent',
+    }}
+    dropdownStyle={{
+      zIndex: 999,
+    }}
+  />
+</div>
+
+
 
           <div>
             <label htmlFor="email" className="block text-blue-700 font-medium">
@@ -176,7 +201,7 @@ export default function RegistrationForm() {
           <div>
             <label className="block text-blue-700 font-medium">Team Members</label>
             {teamMembers.map((data, index) => (
-              <div key={index} className="flex flex-col md:flex-row gap-4 mt-2">
+              <div key={index} className="flex flex-col md:flex-row justify-around mt-2 mx-auto gap-2">
                 <input
                   type="text"
                   className="flex-grow border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
@@ -243,6 +268,7 @@ export default function RegistrationForm() {
               * Please provide access to open the file.
             </p>
             <p className="text-sm text-red-500">* Follow the sample presentation format.</p>
+          </div>
           </div>
 
           {!isLoading ? (
