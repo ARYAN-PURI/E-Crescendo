@@ -22,10 +22,10 @@ export default function AdminLogin() {
         }
     }
   return (
-    <div className="flex items-center flex-col justify-between bg-gradient-to-br  from-gray-700 via-gray-900 to-black min-h-screen  bg-gray-100">
+    <div className="flex items-center flex-col justify-between bg-gradient-to-br  from-gray-700 via-gray-900 to-black min-h-screen">
       <NavBar/>
       <div className='px-3'>
-      <div className="bg-white p-6 rounded-lg shadow-md w-96 my-[75%] sm:my-[60%] md:my-[50%] lg:my-[40%]">
+      <div className="bg-white p-6 rounded-lg shadow-md w-[95vw] sm:w-96 my-[70%] sm:my-[60%] lg:my-[55%]">
         <h1 className="text-2xl font-bold mb-4 text-center">Admin Login</h1>
         <div>
           <div className="mb-4">

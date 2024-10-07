@@ -140,7 +140,7 @@ function Child() {
                                 <h1 className="text-4xl font-semibold text-white mt-8 text-center">
                                     Team Registration Form
                                 </h1>
-                                <div className="w-full max-w-4xl bg-white shadow-xl rounded-lg p-8 lg:p-12">
+                                <div className="w-full max-w-4xl bg-white shadow-xl rounded-lg p-8 lg:p-12 mx-3">
                                     <div className="space-y-6">
                                         <div>
                                             <label htmlFor="teamName" className="block text-blue-700 font-medium">
