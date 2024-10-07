@@ -254,7 +254,7 @@ export default function Home() {
           :
           <button
             onClick={sendQuery}
-            className="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-indigo-500 transition-colors duration-300"
+            className="w-full my-2 bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-indigo-500 transition-colors duration-300"
           >
             Submit
           </button>
