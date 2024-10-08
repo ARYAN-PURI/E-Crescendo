@@ -154,7 +154,7 @@ export default function RegistrationForm() {
   <PhoneInput
     country={'in'} // Default country
     value={data.contactNo}
-    onChange={(phone) => setdata({ ...data, contactNo: phone })}
+    onChange={(phone:any) => setdata({ ...data, contactNo: phone })}
     inputProps={{
       name: 'contactNo',
       required: true,
