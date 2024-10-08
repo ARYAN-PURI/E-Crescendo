@@ -4,6 +4,8 @@ import { useState } from "react";
 import axios from 'axios';
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 export default function Home() {
   const [data, setData] = useState({
     name: "",
@@ -212,7 +214,7 @@ export default function Home() {
       />
     </div>
 
-    <div className="mb-6">
+    {/* <div className="mb-6">
       <input
         className="w-full p-2 border-b border-gray-500 bg-transparent text-white focus:outline-none focus:border-indigo-500 focus:ring-0"
         type="number"
@@ -220,7 +222,45 @@ export default function Home() {
         value={data.mobile}
         onChange={(e) => { setData({ ...data, mobile: e.target.value }) }}
       />
-    </div>
+    </div> */}
+
+
+<div className="mb-6">
+ 
+  <PhoneInput
+    country={'in'} // Default country
+    value={data.mobile}
+    onChange={(phone) => setData({ ...data, mobile: phone })}
+    inputProps={{
+      name: 'contactNo',
+      required: true,
+      autoFocus: false,
+    }}
+    containerClass="w-full"
+    inputStyle={{
+      paddingLeft: '3rem', // Space between flag and number
+      paddingRight: '1rem', // Space between number and container edge
+      width: '100%',
+      paddingTop: '0.5rem',
+      paddingBottom: '0.5rem',
+      border : 'none' ,
+      borderBottom: '1px solid #6b7280', // Matches border-gray-500
+      borderRadius :'0',
+      backgroundColor: 'transparent',
+      color: '',
+      outline: 'none',
+      
+      transition: 'box-shadow 0.2s ease-in-out',
+    }}
+    buttonStyle={{
+      border: 'none',
+      background: 'transparent',
+    }}
+    dropdownStyle={{
+      zIndex: 999,
+    }}
+  />
+</div>
 
     <div className="mb-6">
       <input
