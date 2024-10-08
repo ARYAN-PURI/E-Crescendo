@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily:{
         'sixtyfour' :['Sixtyfour Convergence','sans-serif'],
+        'Poppins' : ['Poppins','sans-serif'],
       },
       colors: {
         background: "var(--background)",
