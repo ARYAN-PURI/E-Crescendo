@@ -21,6 +21,9 @@ export default function RegistrationForm() {
     projectTitle: "",
     uploadedfile: "",
   });
+
+
+  const [mobile,setMobile] = useState('');
   const [teamMembers, setTeamMembers] = useState([
     { name: "", rollNo: "" },
     { name: "", rollNo: "" },
@@ -46,7 +49,7 @@ export default function RegistrationForm() {
 
   async function submitData(sendData: any) {
     try {
-      setIsLoading(true);
+      setIsLoading(true);  
       const res = await axios.post("/api/submitData", sendData);
       if (!res.data.success) {
         setError("Email Already Exists. Try With A Different Account");
@@ -61,7 +64,8 @@ export default function RegistrationForm() {
   }
 
   function handleSubmit() {
-    setdata({ ...data });
+    setdata({ ...data ,contactNo :data.contactNo.substring(2)});
+    
     if (data.teamName == "") {
       setError("Team Name Field Cannot Be Empty");
     } else if (data.teamLeaderName == "") {
@@ -153,8 +157,17 @@ export default function RegistrationForm() {
   </label>
   <PhoneInput
     country={'in'} // Default country
-    value={data.contactNo}
-    onChange={(phone:any) => setdata({ ...data, contactNo: phone })}
+    value={mobile}
+    onChange={(phone:string) => {
+      if(phone.length==12){
+        data.contactNo = phone.substring(2);
+        
+      }
+      else{
+        data.contactNo = mobile;
+        setMobile(phone);
+      }
+    }}
     inputProps={{
       name: 'contactNo',
       required: true,
