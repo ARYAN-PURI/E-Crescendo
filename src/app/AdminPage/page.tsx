@@ -13,6 +13,9 @@ export default function AdminPage() {
         password: "",
     });
     const [error, setError] = useState("");
+
+
+    const [showPassword, setShowPassword] = useState(false);
     function handleLogin() {
         if (user.userName == process.env.NEXT_PUBLIC_USER_NAME && user.password == process.env.NEXT_PUBLIC_PASSWORD) {
             setIsCorrect(true);
@@ -52,21 +55,37 @@ export default function AdminPage() {
                                             id="username"
                                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                             value={user.userName}
-                                            onChange={(e) => setUser({ ...user, userName: e.target.value })}
+                                            onChange={(e) => {setUser({ ...user, userName: e.target.value })
+                                        setError("")}}
                                             required
                                         />
                                     </div>
-                                    <div className="mb-4">
-                                        <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
-                                        <input
-                                            type="password"
-                                            id="password"
-                                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                            value={user.password}
-                                            onChange={(e) => setUser({ ...user, password: e.target.value })}
-                                            required
-                                        />
-                                    </div>
+                                    
+    <div className="mb-4">
+        <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+        <div className="relative">
+            <input
+                type={showPassword ? 'text' : 'password'} // Toggles between text and password
+                id="password"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                value={user.password}
+                onChange={(e) => {
+                    setUser({ ...user, password: e.target.value });
+                    setError(""); // Clear error message on input change
+                }}
+                required
+            />
+            <button
+                type="button"
+                className="absolute right-3 top-2"
+                onClick={() => setShowPassword(!showPassword)} // Toggle visibility
+                aria-label={showPassword ? 'Hide password' : 'Show password'} // Accessibility
+            >
+                {showPassword ? 'Hide' : 'Show'} {/* Change button text */}
+            </button>
+        </div>
+    </div>
+
                                     <button onClick={handleLogin} className="w-full px-4 py-2 bg-indigo-500 text-white font-medium rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">Login</button>
                                 </div>
                                 {error !== "" ?
