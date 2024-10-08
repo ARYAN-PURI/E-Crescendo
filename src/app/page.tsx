@@ -69,11 +69,18 @@ export default function Home() {
               Admin Panel
             </div>
           </Link>
-          <Link href="https://drive.google.com/drive/folders/1ScRvEIfU_QdZ1fFXGe4MLsqVfaa-zCpv?usp=drive_link">
+          <a href="./guidelines/E-crescendo.pdf" download = "E-Crescendo ecell-nith 2024">
             <div className="px-8 my-4 py-4 bg-gray-700 text-white font-bold rounded-lg shadow-lg transform transition hover:bg-gray-600 hover:scale-105 cursor-pointer">
               Guidelines
             </div>
-          </Link>
+         </a>
+          <div>
+          <div>
+
+</div>
+
+</div>
+
         </div>
       </section>
 
