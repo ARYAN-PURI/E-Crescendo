@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        'sixtyfour' :['Sixtyfour Convergence','sans-serif'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

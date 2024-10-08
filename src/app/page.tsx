@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import RotatingText from "./components/RotatingText";
 export default function Home() {
   const [data, setData] = useState({
     name: "",
@@ -49,11 +50,11 @@ export default function Home() {
       <NavBar/>
       <section id="home" className="min-h-screen flex flex-col items-center justify-center px-4 mt-20">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-center">
-          Welcome to <span className="text-indigo-400">E-Crescendo</span>
+         Welcome to <span className="text-indigo-400 text-nowrap">E-Crescendo</span>
         </h1>
-        <p className="text-md md:text-lg mb-12 text-center">
-          Join the most exciting event of the year! By Registering Your Team!!
-        </p>
+        <div className="text-md md:text-lg mb-12 text-center">
+          <RotatingText/>
+        </div>
 
         <div className="space-y-4 sm:space-y-0 sm:space-x-8 sm:flex justify-center flex-wrap">
           <Link href="/registrationForm">
