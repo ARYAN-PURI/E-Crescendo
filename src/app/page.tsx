@@ -16,10 +16,13 @@ export default function Home() {
   });
   const [error,setError]=useState("");
   const [loading, setLoading] = useState(false);
+  const [contactNO,setContact]= useState('');
   async function sendQuery() {
     setLoading(true);
-    if(data.name=="" && data.mobile=="" && data.email=="" && data.query==""){
+    if(data.name==""|| data.mobile.length!==10|| data.email=="" || data.query==""){
+      
       setError("Fill the Fields First");
+      console.log(data);
     }else{
       try{
         const result=await axios.post('/api/sendQuery',data);
@@ -218,7 +221,7 @@ export default function Home() {
         type="text"
         placeholder="Enter your name"
         value={data.name}
-        onChange={(e) => { setData({ ...data, name: e.target.value }) }}
+        onChange={(e) => { setData({ ...data, name: e.target.value }) ;setError('') }}
       />
     </div>
 
@@ -237,8 +240,19 @@ export default function Home() {
  
   <PhoneInput
     country={'in'} // Default country
-    value={data.mobile}
-    onChange={(phone) => setData({ ...data, mobile: phone })}
+    id = "phone"
+    value={contactNO}
+    onChange={(phone:string) => {
+      if(phone.length===12){
+        data.mobile = phone.substring(2);
+      }
+      else{
+        setContact(phone) 
+        data.mobile = phone
+      }
+      setError('')
+
+    }}
     inputProps={{
       name: 'contactNo',
       required: true,
@@ -276,7 +290,7 @@ export default function Home() {
         type="email"
         placeholder="Enter your email"
         value={data.email}
-        onChange={(e) => { setData({ ...data, email: e.target.value }) }}
+        onChange={(e) => { setData({ ...data, email: e.target.value });setError('') }}
       />
     </div>
 
@@ -286,7 +300,7 @@ export default function Home() {
         id="query"
         placeholder="Write your query"
         value={data.query}
-        onChange={(e) => { setData({ ...data, query: e.target.value }) }}
+        onChange={(e) => { setData({ ...data, query: e.target.value });setError('') }}
         rows={2}
       ></textarea>
     </div>
@@ -309,7 +323,7 @@ export default function Home() {
       }
       {
         error !== "" ?
-          <div className={"font-bold p-2 rounded-lg text-red-600 bg-red-100"}>{error}</div>
+          <div className={"font-bold p-4 rounded-lg text-red-600 bg-white-100"}>{error}</div>
           :
           null
       }
