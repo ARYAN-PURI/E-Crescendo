@@ -27,7 +27,7 @@ const RotatingText: React.FC = () => {
         setTimeout(() => {
           // Prepare to switch to the next synonym after a delay
           setCurrentSynonymIndex((prevIndex) => (prevIndex + 1) % synonyms.length);
-        }, 5000);
+        }, 2000);
       }
     }, typingSpeed);
 
