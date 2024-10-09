@@ -44,21 +44,21 @@ const NavBar: React.FC = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="md:hidden bg-black bg-opacity-50 p-4">
+        <div className="md:hidden bg-opacity-50 p-4 flex flex-col items-center">
           {/* Original href links from the previous navbar for mobile */}
-          <a href="/#home" className="block font-Poppins text-white text-xl hover:text-indigo-400 transition transform hover:scale-110">
+          <a href="/#home" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110">
             Home
           </a>
-          <a href="/#timeline" className="block font-Poppins text-white text-xl hover:text-indigo-400 transition transform hover:scale-110">
+          <a href="/#timeline" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110">
             Timeline
           </a>
-          <a href="/#instructions" className="block font-Poppins text-white text-xl hover:text-indigo-400 transition transform hover:scale-110">
+          <a href="/#instructions" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110">
             Instructions
           </a>
-          <a href="/#apply" className="block font-Poppins text-white text-xl hover:text-indigo-400 transition transform hover:scale-110">
+          <a href="/#apply" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110">
             How to Apply
           </a>
-          <a href="/#contact" className="block font-Poppins text-white text-xl hover:text-indigo-400 transition transform hover:scale-110">
+          <a href="/#contact" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110">
             Contact Us
           </a>
         </div>

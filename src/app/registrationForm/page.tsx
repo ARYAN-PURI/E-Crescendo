@@ -102,7 +102,7 @@ export default function RegistrationForm() {
       <h1 className="text-4xl font-semibold text-white my-8 text-center">
         Team Registration Form
       </h1>
-      <div className="flex flex-col items-center py-20 bg-gradient-to-br  from-gray-700 via-gray-800 to-black  max-w-3xl rounded-md ">
+      <div className="flex flex-col items-center py-20 bg-gradient-to-br  from-gray-700 via-gray-800 to-black  max-w-4xl rounded-md  w-full">
       <div className="w-full max-w-4xl bg-white shadow-xl rounded-lg p-8 lg:p-12">
         <div className="space-y-6">
           <div>
