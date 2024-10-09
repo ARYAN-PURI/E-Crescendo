@@ -56,7 +56,7 @@ export default function Home() {
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-center">
           Welcome to <span className="text-indigo-400 text-nowrap">E-Crescendo</span>
         </h1>
-        <div className="text-md md:text-lg mb-12 text-center">
+        <div className="text-md md:text-lg mb-5 md:mb-12 text-center">
           <RotatingText />
         </div>
 
