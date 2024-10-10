@@ -64,7 +64,7 @@ const NavBar: React.FC = () => {
           <a href="/#contact" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110">
             Contact Us
           </a>
-          <a href="/AdminPage" className="text-white font-Poppins text-xl hover:text-indigo-400 transition transform hover:scale-110">
+          <a href="/AdminPage" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110">
               Admin Pannel
           </a>
         </div>
