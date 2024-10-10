@@ -50,13 +50,13 @@ export default function Home() {
 
   }
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-700 via-gray-900 to-black text-white">
+    <div className="min-h-screen flex flex-col bg-[url('/bgimage.png')] bg-fixed text-white">
       <NavBar />
       <section id="home" className="min-h-screen flex flex-col items-center justify-center px-4 mt-20">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-center">
           Welcome to <span className="text-indigo-400 text-nowrap">E-Crescendo</span>
         </h1>
-        <div className="text-md md:text-lg mb-5 md:mb-12 text-center">
+        <div className="text-md md:text-lg mb-12 text-center">
           <RotatingText />
         </div>
 
@@ -70,14 +70,6 @@ export default function Home() {
               height={200} />
           </Link>
           <Link href="/EditResponseForm">
-            <Image
-              className='rounded-lg shadow-lg hover:scale-105 my-4 hover:border-white hover:border-2'
-              src='/edit.png'
-              alt='Edit Form'
-              width={250}
-              height={200} />
-          </Link>
-          <Link href="/AdminPage">
             <Image
               className='rounded-lg shadow-lg hover:scale-105 my-4 hover:border-white hover:border-2'
               src='/edit.png'

@@ -18,7 +18,7 @@ const NavBar: React.FC = () => {
             <Image src="/logo.png" alt="Logo" width={75} height={75} />
             <span className="ml-2">E-Crescendo</span>
           </div>
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden xl:flex space-x-8">
             {/* Original href links from the previous navbar */}
             <a href="/#home" className="text-white text-xl font-Poppins hover:text-indigo-400 transition transform hover:scale-110">
               Home
@@ -35,8 +35,11 @@ const NavBar: React.FC = () => {
             <a href="/#contact" className="text-white font-Poppins text-xl hover:text-indigo-400 transition transform hover:scale-110">
               Contact Us
             </a>
+            <a href="/AdminPage" className="text-white font-Poppins text-xl hover:text-indigo-400 transition transform hover:scale-110">
+              Admin Pannel
+            </a>
           </div>
-          <button className="md:hidden text-white" onClick={toggleMenu}>
+          <button className="xl:hidden text-white" onClick={toggleMenu}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
@@ -60,6 +63,9 @@ const NavBar: React.FC = () => {
           </a>
           <a href="/#contact" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110">
             Contact Us
+          </a>
+          <a href="/AdminPage" className="text-white font-Poppins text-xl hover:text-indigo-400 transition transform hover:scale-110">
+              Admin Pannel
           </a>
         </div>
       )}
