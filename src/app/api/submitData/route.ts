@@ -32,7 +32,7 @@ export async function POST(req:NextRequest){
                     <p>We look forward to your participation in the event. Should you have any questions or require further assistance, feel free to reach out to us.</p>
                     
                     <p style="margin-top: 30px;">Best Regards,</p>
-                    <p><b>The E-Cell Team</b></p>
+                    <p><b>The E-Cell NIT Hamirpur Team</b></p>
                     
                     <hr style="border: none; height: 1px; background-color: #ddd; margin: 20px 0;">
                     
