@@ -9,7 +9,7 @@ export default function Footer(){
               <Image src="/ecell.png" alt="Sponsor 2" width={85} height={70} className="transform rounded-lg hover:scale-110" />
             </div>
             <div className="text-center text-gray-300">
-              <p>Powered By Team E-Cell &copy; 2024</p>
+              <p>Powered By Team E-Cell NITH &copy; 2024</p>
               <p>Creating Future Innovators</p>
             </div>
             <div className="flex space-x-6 justify-center">

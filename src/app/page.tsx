@@ -60,8 +60,8 @@ export default function Home() {
         <div className="text-md md:text-lg mb-6 text-center">
           <RotatingText />
         </div>
-        <div className="text-md md:text-2xl mb-12 text-center text-cyan-400">
-          Organised By <span className="text-fuchsia-200 text-3xl font-bold">E-Cell NIT Hamirpur</span>
+        <div className="flex flex-col md:flex-row justify-center items-center">
+          <span className="text-fuchsia-200 text-3xl font-bold my-2">Organised By </span> <span className="text-fuchsia-200 text-3xl font-bold"> &nbsp; E-Cell NIT Hamirpur</span>
         </div>
 
         <div className="space-y-4 sm:space-y-0 sm:space-x-8 sm:flex justify-center flex-wrap">
