@@ -118,7 +118,7 @@ export default function Home() {
               📅
             </div>
             <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
-              <h3 className="text-xl font-bold mb-2 text-slate-900 group-hover:text-indigo-200 transition-colors duration-300">REGISTRATION Ends</h3>
+              <h3 className="text-xl font-bold mb-2 text-slate-900 group-hover:text-indigo-200 transition-colors duration-300">REGISTRATION ENDS</h3>
               <p className="font-semibold text-green-300">20 October 2024</p>
               <p className="mt-2 text-yellow-300">Last date for submitting you application </p>
             </div>
