@@ -135,7 +135,7 @@ function Child() {
                         </div>
                         :
                         <div>
-                            <NavBar/>
+                            <NavBar />
                             <div className="flex flex-col items-center py-20 bg-gradient-to-br  from-gray-700 via-gray-900 to-black min-h-screen">
                                 <h1 className="text-4xl font-semibold text-white mt-8 text-center">
                                     Team Registration Form
@@ -262,14 +262,13 @@ function Child() {
                                         </div>
 
                                         <div>
-                                            <Link
-                                                href={
-                                                    "https://drive.google.com/drive/folders/1ScRvEIfU_QdZ1fFXGe4MLsqVfaa-zCpv?usp=drive_link"
-                                                }
+                                            <a
+                                                href='./guidelines/pptTemplate.png'
+                                                download="E-Crescendo ecell-nith 2024 PPT Template"
                                                 className="text-blue-600 hover:underline"
                                             >
                                                 Download The Sample Presentation
-                                            </Link>
+                                            </a>
                                         </div>
 
                                         <div>
@@ -316,7 +315,7 @@ function Child() {
                                     </div>
                                 </div>
                             </div>
-                            <Footer/>
+                            <Footer />
                         </div>
             }
         </div>

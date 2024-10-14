@@ -81,7 +81,7 @@ export default function Home() {
               width={250}
               height={200} />
           </Link>
-          <a href="./guidelines/E-crescendo.pdf" download="E-Crescendo ecell-nith 2024">
+          <a href="./guidelines/E-crescendo.pdf" download="E-Crescendo ecell-nith 2024 guidelines">
             <Image
               className='rounded-lg shadow-lg hover:scale-105 my-4 hover:border-white hover:border-2'
               src='/guide.png'
@@ -108,8 +108,19 @@ export default function Home() {
             </div>
             <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
               <h3 className="text-xl font-bold mb-2 text-slate-900 group-hover:text-indigo-200 transition-colors duration-300">REGISTRATION BEGINS</h3>
-              <p className="font-semibold text-green-300">22nd September, 2024</p>
+              <p className="font-semibold text-green-300">15 October 2024</p>
               <p className="mt-2 text-yellow-300">Your initial steps into the realm of developing a startup</p>
+            </div>
+          </div>
+
+          <div className="group timeline-item relative">
+            <div className="absolute -left-5 top-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center transition-transform transform group-hover:scale-125 shadow-lg">
+              📅
+            </div>
+            <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
+              <h3 className="text-xl font-bold mb-2 text-slate-900 group-hover:text-indigo-200 transition-colors duration-300">REGISTRATION Ends</h3>
+              <p className="font-semibold text-green-300">20 October 2024</p>
+              <p className="mt-2 text-yellow-300">Last date for submitting you application </p>
             </div>
           </div>
 
@@ -152,6 +163,7 @@ export default function Home() {
               <li>Use clear and concise language.</li>
               <li>Include visuals, graphs, or prototypes.</li>
               <li>Highlight unique aspects of your project.</li>
+
             </ul>
           </div>
 
@@ -198,8 +210,9 @@ export default function Home() {
             </div>
             <ul className="list-disc list-inside text-white text-lg space-y-2 pl-2">
               <li>Register on the official website of E-Crescendo.</li>
-              <li>Include your name, contact info, and academic details.</li>
+              <li>Include your name, contact info and your Team Members Details.</li>
               <li>Mention your startup idea.</li>
+              <li>Upload Your PPT on google drive and paste the link (make access of the link as public) in the form</li>
               <li>Registration must be completed by the team leader.</li>
             </ul>
           </div>
@@ -215,6 +228,7 @@ export default function Home() {
               <li>Submit a comprehensive project proposal.</li>
               <li>Clearly outline innovation, market potential, and impact.</li>
               <li>Include preliminary work or prototypes, if available.</li>
+              <li>Clearly Specify the addressing problem and the budget of your project.</li>
               <li>Projects can be from any domain (technical or non-technical).</li>
             </ul>
           </div>

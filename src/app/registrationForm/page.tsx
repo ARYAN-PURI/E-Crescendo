@@ -255,14 +255,13 @@ export default function RegistrationForm() {
           </div>
 
           <div>
-            <Link
-              href={
-                "https://drive.google.com/drive/folders/1ScRvEIfU_QdZ1fFXGe4MLsqVfaa-zCpv?usp=drive_link"
-              }
+            <a
+              href='./guidelines/pptTemplate.png'
+              download="E-Crescendo ecell-nith 2024 PPT Template"
               className="text-blue-600 hover:underline"
             >
               Download The Sample Presentation
-            </Link>
+            </a>
           </div>
 
           <div>
