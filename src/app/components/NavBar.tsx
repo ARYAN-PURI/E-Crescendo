@@ -1,5 +1,3 @@
-// components/NavBar.tsx
-
 import Image from "next/image";
 import { useState } from "react";
 
@@ -26,7 +24,7 @@ const NavBar: React.FC = () => {
             <a href="/#timeline" className="text-white font-Poppins text-xl hover:text-indigo-400 transition transform hover:scale-110">
               Timeline
             </a>
-            <a href="/#instructions" className="text-white  font-Poppins text-xl hover:text-indigo-400 transition transform hover:scale-110">
+            <a href="/#instructions" className="text-white font-Poppins text-xl hover:text-indigo-400 transition transform hover:scale-110">
               Instructions
             </a>
             <a href="/#apply" className="text-white font-Poppins text-xl hover:text-indigo-400 transition transform hover:scale-110">
@@ -36,7 +34,7 @@ const NavBar: React.FC = () => {
               Contact Us
             </a>
             <a href="/AdminPage" className="text-white font-Poppins text-xl hover:text-indigo-400 transition transform hover:scale-110">
-              Admin Pannel
+             Admin Panel
             </a>
           </div>
           <button className="xl:hidden text-white" onClick={toggleMenu}>
@@ -47,7 +45,7 @@ const NavBar: React.FC = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="md:hidden bg-opacity-50 p-4 flex flex-col items-center">
+        <div className="xl:hidden bg-opacity-50 p-4 flex flex-col items-center z-50">
           {/* Original href links from the previous navbar for mobile */}
           <a href="/#home" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110">
             Home
@@ -65,7 +63,7 @@ const NavBar: React.FC = () => {
             Contact Us
           </a>
           <a href="/AdminPage" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110">
-              Admin Pannel
+            Admin Panel
           </a>
         </div>
       )}
