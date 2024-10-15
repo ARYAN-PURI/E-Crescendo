@@ -5,8 +5,8 @@ export default function Footer(){
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div className="flex space-x-8 justify-center items-center">
-              <Image src="/logo.png" alt="Sponsor 1" width={65} height={50} className="transform rounded-lg hover:scale-110" />
-              <Image src="/ecell.png" alt="Sponsor 2" width={85} height={70} className="transform rounded-lg hover:scale-110" />
+              <Image src="/logo.png" alt="Sponsor 1" width={75} height={75} className="transform rounded-lg hover:scale-110" />
+              <Image src="/ecell.png" alt="Sponsor 2" width={130} height={130} className="transform rounded-lg hover:scale-110" />
             </div>
             <div className="text-center text-gray-300">
               <p>Powered By Team E-Cell NITH &copy; 2024</p>
