@@ -13,7 +13,7 @@ const NavBar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="text-2xl font-bold text-indigo-400 flex items-center">
-            <Image src="/logo.png" alt="Logo" width={75} height={75} />
+            <Image src="/logo.png" alt="Logo" width={45} height={45} />
             <span className="ml-2">E-Crescendo</span>
           </div>
           <div className="hidden xl:flex space-x-8">
