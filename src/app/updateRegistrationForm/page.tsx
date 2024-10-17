@@ -4,6 +4,9 @@ import { useEffect, useState, Suspense } from 'react';
 import axios from 'axios';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+
 function Child() {
     const searchParams = useSearchParams();
     const router = useRouter();
@@ -19,9 +22,12 @@ function Child() {
         teamMembers: [{}],
         contactNo: "",
         email: "",
+        domains: [""],
         projectTitle: "",
         uploadedfile: ""
     });
+    const [mobile, setMobile] = useState('');
+
     const [teamMembers, setTeamMembers] = useState([{ name: "", rollNo: "" }]);
     async function verifyEncryptedString() {
         const id = searchParams.get('id');
@@ -82,7 +88,6 @@ function Child() {
         }
     }
     function handleSubmit() {
-        setdata({ ...data });
         if (data.teamName == "") {
             setError('Team Name Field Cannot Be empty');
         }
@@ -191,13 +196,41 @@ function Child() {
                                             <label htmlFor="contactNo" className="block text-blue-700 font-medium">
                                                 Contact Number
                                             </label>
-                                            <input
-                                                type="number"
-                                                id="contactNo"
-                                                className="mt-1 w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                                                value={data.contactNo}
-                                                onChange={(e) => {
-                                                    setdata({ ...data, contactNo: e.target.value });
+                                            <PhoneInput
+                                                country={'in'} // Default country
+                                                value={mobile}
+                                                onChange={(phone: string) => {
+                                                    if (phone.length == 12) {
+                                                        data.contactNo = phone.substring(2);
+
+                                                    }
+                                                    else {
+                                                        data.contactNo = mobile;
+                                                        setMobile(phone);
+                                                    }
+                                                }}
+                                                inputProps={{
+                                                    name: 'contactNo',
+                                                    required: true,
+                                                    autoFocus: false,
+                                                }}
+                                                containerClass="mt-1 w-full border border-gray-300 rounded-lg focus-within:ring-2 focus-within:ring-blue-500 focus-within:outline-none"
+                                                inputStyle={{
+                                                    paddingLeft: '3rem', // distance between flag and code
+                                                    width: '100%',
+                                                    paddingTop: '1.3rem',
+                                                    paddingBottom: '1.3rem',
+                                                    border: '1px solid #ccc',
+                                                    borderRadius: '8px',
+                                                    outline: 'none',
+                                                    transition: 'box-shadow 0.2s ease-in-out',
+                                                }}
+                                                buttonStyle={{
+                                                    border: 'none',
+                                                    background: 'transparent',
+                                                }}
+                                                dropdownStyle={{
+                                                    zIndex: 999,
                                                 }}
                                             />
                                         </div>
@@ -243,6 +276,77 @@ function Child() {
                                                     />
                                                 </div>
                                             ))}
+                                        </div>
+                                        <div>
+                                            <label htmlFor="domain" className="block text-blue-700 font-medium mb-4">
+                                                Project Domains
+                                            </label>
+                                            <div className="grid md:grid-cols-2 gap-4 px-2 py-2">
+                                                {[
+                                                    "IOT and Hardware",
+                                                    "Wireless Communication",
+                                                    "AI/ML",
+                                                    "Signal Processing and Networking",
+                                                    "Web Development",
+                                                    "Data Science",
+                                                    "Cloud Computing",
+                                                    "Health and Hospitality",
+                                                    "Modeling/Simulation",
+                                                    "VLSI Design",
+                                                    "Embedded Systems",
+                                                    "Power and Control Systems",
+                                                    "Robotics and Automation",
+                                                    "Machine Design",
+                                                    "Quantum Mechanics",
+                                                    "Optics and Photonics",
+                                                    "Nanotechnology and Biomaterials",
+                                                    "Polymer and Biochemical Technology",
+                                                    "Building Information Modeling [BIM]",
+                                                    "Structural Engineering",
+                                                    "Geometrical Engineering",
+                                                    "Transportation Engineering",
+                                                    "Augmented and Virtual Reality",
+                                                    "Other"
+                                                ].map((domain) => (
+                                                    <div key={domain} className="flex items-center group h-6">
+                                                        <input
+                                                            type="checkbox"
+                                                            id={domain}
+                                                            value={domain}
+                                                            checked={data.domains.includes(domain)}
+                                                            onChange={(e) => {
+                                                                const { value, checked } = e.target;
+                                                                let newDomains = checked
+                                                                    ? [...data.domains, value]
+                                                                    : data.domains.filter((d) => d !== value);
+                                                                newDomains = newDomains.filter((val) => val !== "");
+                                                                setdata({ ...data, domains: newDomains });
+                                                            }}
+                                                            className="hidden peer"
+                                                        />
+                                                        <div className="w-5 h-5 border-2 border-blue-500 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out peer-checked:bg-blue-500 peer-checked:border-transparent">
+                                                            <svg
+                                                                className="w-4 h-4 text-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 20 20"
+                                                                fill="currentColor"
+                                                            >
+                                                                <path
+                                                                    fillRule="evenodd"
+                                                                    d="M16.707 5.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-3-3a1 1 0 011.414-1.414L9 11.586l6.293-6.293a1 1 0 011.414 0z"
+                                                                    clipRule="evenodd"
+                                                                />
+                                                            </svg>
+                                                        </div>
+                                                        <label
+                                                            htmlFor={domain}
+                                                            className="ml-3 text-md text-gray-700 font-medium cursor-pointer group-hover:text-blue-500 transition-colors duration-300"
+                                                        >
+                                                            {domain}
+                                                        </label>
+                                                    </div>
+                                                ))}
+                                            </div>
                                         </div>
 
                                         <div>

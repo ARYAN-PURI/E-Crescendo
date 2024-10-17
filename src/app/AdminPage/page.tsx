@@ -8,7 +8,8 @@ import Footer from '../components/Footer';
 export default function AdminPage() {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [isCorrect, setIsCorrect] = useState(false);
+    const [isCorrect, setIsCorrect] = useState(true);
+    const colorClasses = ['text-red-400', 'text-red-500', 'text-red-600', 'text-red-700', 'text-red-800', 'text-red-900'];
     const [user, setUser] = useState({
         userName: "",
         password: "",
@@ -111,39 +112,53 @@ export default function AdminPage() {
                         ) : (
                             <div>
                                 {data.map((val: any, index: number) => (
-                                    <div key={index} className="bg-white shadow-lg rounded-lg p-6 md:px-10 flex flex-col md:flex-row justify-between my-5">
-                                        <div className="md:w-[50%] w-full mb-6 md:mb-0">
-                                            <div className="mb-4">
-                                                <h2 className="text-xl md:text-2xl font-semibold text-center text-gray-700">{val.teamName}</h2>
-                                            </div>
-                                            <div className="mb-4">
-                                                <h2 className="text-md md:text-lg font-semibold text-center text-gray-700">Team Leader: {val.teamLeaderName}</h2>
-                                            </div>
-                                            <div className="mb-4">
-                                                <h3 className="text-lg font-semibold text-gray-600 ml-[15%]">Team Members</h3>
-                                                <div className="mt-2 space-y-2">
-                                                    {val.teamMembers.map((teamval: any, teamindex: number) => (
-                                                        <div key={teamindex} className="text-md font-semibold text-gray-500 flex">
-                                                            <div className="my-1 ml-[10%]">{teamindex + 1}. {teamval.name} ({teamval.rollNo}) </div>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </div>
+                                    <div key={index} className="bg-white shadow-lg rounded-lg p-6 flex flex-col my-5" >
+                                        <div className="mb-5">
+                                            <h2 className="text-xl md:text-2xl underline font-semibold text-center text-blue-700">{val.teamName}</h2>
                                         </div>
-                                        <div className="md:w-[50%] w-full mt-0 md:mt-[5%]">
-                                            <div className="mb-4">
-                                                <h3 className="text-lg font-semibold text-gray-600">Contact Information</h3>
-                                                <div className="mt-2 text-sm text-gray-500">
-                                                    <p className="text-md font-semibold text-green-500">Contact No: {val.contactNo}</p>
-                                                    <p className="text-md font-semibold text-violet-500">Email: <a href={`mailto:${val.email}`} className="cursor">{val.email}</a></p>
+                                        <div className="flex justify-between flex-col md:flex-row  items-center">
+                                            <div className="w-full flex flex-col items-center">
+                                                <div className="mb-4">
+                                                    <h2 className="text-xl font-semibold text-center text-gray-700">Team Leader: <span className="text-orange-600">{val.teamLeaderName}</span></h2>
+                                                </div>
+                                                <div className="mb-4">
+                                                    <h3 className="text-lg font-semibold text-gray-600">Team Members</h3>
+                                                    <div className="mt-2 space-y-2">
+                                                        {val.teamMembers.map((teamval: any, teamindex: number) => (
+                                                            <div key={teamindex} className="text-md font-semibold text-gray-500 flex">
+                                                                <div className="my-1">{teamindex + 1}. <span className="text-red-500">{teamval.name}</span> (<span className="text-emerald-500">{teamval.rollNo}</span>) </div>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                                <div className="mb-2">
+                                                    <h3 className="text-lg font-semibold text-gray-600">Contact Information</h3>
+                                                    <div className="mt-2 text-sm text-gray-500">
+                                                        <p className="text-md my-2 font-semibold text-gray-600">Contact No: <span className="text-blue-600">{val.contactNo}</span></p>
+                                                        <p className="text-md mb-2 font-semibold text-gray-600">Email: <a href={`mailto:${val.email}`} className="cursor text-blue-600">{val.email}</a></p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="mb-4">
-                                                <h3 className="text-lg font-semibold text-gray-600">Project Information</h3>
-                                                <p className="text-sm font-semibold text-gray-500 mb-2">Project Title: <span className="text-xl">{val.projectTitle}</span></p>
-                                                <Link href={val.uploadedfile} className="bg-blue-700 mt-3 font-semibold py-2 px-3 rounded text-white hover:bg-blue-300 hover:text-black">
-                                                    Open Presentation
-                                                </Link>
+                                            <div className="w-full flex flex-col items-center">
+
+                                                <div className="mb-4">
+                                                    <h3 className="text-xl font-semibold text-gray-600 mb-1">Project Information</h3>
+                                                    <p className="text-md font-semibold text-gray-600 mb-2">Project Title: <span className="text-xl text-fuchsia-700">{val.projectTitle}</span></p>
+                                                    <div className="mb-3">
+                                                        <p className="text-md font-semibold text-gray-600 mb-2">Domains:</p>
+                                                        {
+
+                                                            val.domains.map((domainval: string, keyindex: number) => (
+                                                                <div key={keyindex} className={`text-sm font-semibold ${colorClasses[keyindex % colorClasses.length]} my-1`}>
+                                                                    * {domainval}
+                                                                </div>
+                                                            ))
+                                                        }
+                                                    </div>
+                                                    <Link href={val.uploadedfile} className="bg-blue-700 mt-3 font-semibold py-2 px-3 rounded text-white hover:bg-blue-300 hover:text-black">
+                                                        Open Presentation
+                                                    </Link>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

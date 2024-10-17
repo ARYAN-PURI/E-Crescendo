@@ -22,6 +22,10 @@ const teamSchema=new mongoose.Schema({
         type:String,
         required:[true,'Please Provide the Email']
     },
+    domains:{
+        type:Array,
+        required:[true,'Please Provide the Domains of the Project']
+    },
     projectTitle:{
         type:String
     },

@@ -13,6 +13,7 @@ export async function POST(req:NextRequest){
                 teamMembers:reqBody.teamMembers,
                 contactNo:reqBody.teamNumber,
                 email:reqBody.email,
+                domains:reqBody.domains,
                 projectTitle:reqBody.projectTitle,
                 uploadedfile:reqBody.uploadedfile,
                 encryptedString:"",
