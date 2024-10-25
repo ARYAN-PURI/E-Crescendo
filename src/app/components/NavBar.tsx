@@ -12,10 +12,10 @@ const NavBar: React.FC = () => {
     <nav className="w-full fixed top-0 z-50 shadow-lg backdrop-blur-md transition-all duration-300 ease-in-out">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-indigo-400 flex items-center">
+          <a href='./guidelines/E-CrescendoBrochure.pdf' download="E-Crescendo ecell-nith 2024 Brochure" className="text-2xl font-bold text-indigo-400 flex items-center">
             <Image src="/logo.png" alt="Logo" width={45} height={45} />
             <span className="ml-2">E-Crescendo</span>
-          </div>
+          </a>
           <div className="hidden xl:flex space-x-8">
             {/* Original href links from the previous navbar */}
             <a href="/#home" className="text-white text-xl font-Poppins hover:text-indigo-400 transition transform hover:scale-110">
