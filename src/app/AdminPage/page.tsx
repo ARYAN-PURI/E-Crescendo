@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 export default function AdminPage() {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [isCorrect, setIsCorrect] = useState(true);
+    const [isCorrect, setIsCorrect] = useState(false);
     const colorClasses = ['text-red-400', 'text-red-500', 'text-red-600', 'text-red-700', 'text-red-800', 'text-red-900'];
     const [user, setUser] = useState({
         userName: "",
