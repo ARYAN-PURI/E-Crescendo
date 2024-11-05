@@ -36,10 +36,10 @@ const RotatingText: React.FC = () => {
 
   return (
     <div style={{ fontSize: '2rem', textAlign: 'center' }}>
-      <h1>
-        {baseText}
+      <h1 className=' flex flex-col lg:flex-row' >
+        <span>{baseText}</span>
         <span className="synonym p-1.5 mx-0.5 rounded-md font-sixtyfour text-blue-600 font-bold">{displayedSynonym}</span>
-        <p className='md:inline'>{eventText} </p>
+        <span>{eventText} </span>
       </h1>
       <style jsx>{`
         .synonym {
