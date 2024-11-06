@@ -67,7 +67,7 @@ export default function Home() {
         <div className="space-y-4 sm:space-y-0 sm:space-x-8 sm:flex justify-center flex-wrap">
           <Link href="/registrationForm">
             <Image
-              className='rounded-lg shadow-lg hover:scale-105 my-4 hover:border-white hover:border-2'
+              className='transition-transform duration-300 rounded-lg shadow-lg hover:scale-105 my-4 hover:border-white hover:border-2'
               src='/register.png'
               alt="Fill Registration Form"
               width={250}
@@ -75,7 +75,7 @@ export default function Home() {
           </Link>
           <Link href="/EditResponseForm">
             <Image
-              className='rounded-lg shadow-lg hover:scale-105 my-4 hover:border-white hover:border-2'
+              className='transition-transform duration-300 rounded-lg shadow-lg hover:scale-105 my-4 hover:border-white hover:border-2'
               src='/edit.png'
               alt='Edit Form'
               width={250}
@@ -83,7 +83,7 @@ export default function Home() {
           </Link>
           <a href="./guidelines/E-crescendo.pdf" download="E-Crescendo ecell-nith 2024 guidelines">
             <Image
-              className='rounded-lg shadow-lg hover:scale-105 my-4 hover:border-white hover:border-2'
+              className=' transition-transform duration-300 rounded-lg shadow-lg hover:scale-105 my-4 hover:border-white hover:border-2'
               src='/guide.png'
               alt='guidelines'
               width={250}
@@ -106,10 +106,10 @@ export default function Home() {
             <div className="absolute -left-5 top-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center transition-transform transform group-hover:scale-125 shadow-lg ">
             📅
             </div>
-            <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
-              <h3 className="text-xl font-bold mb-2 text-slate-900 group-hover:text-indigo-200 transition-colors duration-300">REGISTRATION BEGINS</h3>
-              <p className="font-semibold text-green-300">15 October 2024</p>
-              <p className="mt-2 text-yellow-300">Your initial steps into the realm of developing a startup</p>
+            <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r to-[#5f4ff1] from-[#250f55] rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
+              <h3 className="text-xl font-bold mb-2 text-[#fb6400] group-hover:text-[#40e1d1] transition-colors duration-300">REGISTRATION BEGINS</h3>
+              <p className="font-semibold text-[#1fffa5]">15 October 2024</p>
+              <p className="mt-2 text-yellow-300 font-Poppins">Your initial steps into the realm of developing a startup</p>
             </div>
           </div>
 
@@ -117,10 +117,10 @@ export default function Home() {
             <div className="absolute -left-5 top-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center transition-transform transform group-hover:scale-125 shadow-lg">
               📅
             </div>
-            <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
-              <h3 className="text-xl font-bold mb-2 text-slate-900 group-hover:text-indigo-200 transition-colors duration-300">REGISTRATION ENDS</h3>
-              <p className="font-semibold text-green-300">20 October 2024</p>
-              <p className="mt-2 text-yellow-300">Last date for submitting you application </p>
+            <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r to-[#5f4ff1] from-[#250f55] rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
+              <h3 className="text-xl font-bold mb-2 text-[#fb6400] group-hover:text-[#40e1d1] transition-colors duration-300">REGISTRATION ENDS</h3>
+              <p className="font-semibold text-[#1fffa5]">20 October 2024</p>
+              <p className="mt-2 text-yellow-300 font-Poppins">Last date for submitting you application </p>
             </div>
           </div>
 
@@ -128,10 +128,10 @@ export default function Home() {
             <div className="absolute -left-5 top-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center transition-transform transform group-hover:scale-125 shadow-lg">
               📅
             </div>
-            <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
-              <h3 className="text-xl font-bold mb-2 text-slate-900 group-hover:text-indigo-200 transition-colors duration-300">INTERNAL SCREENING</h3>
-              <p className="font-semibold text-green-300">(Date to be Announced)</p>
-              <p className="mt-2 text-yellow-300">Shortlisting based on the worth of the idea and the caliber of the team members</p>
+            <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r to-[#5f4ff1] from-[#250f55] rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
+              <h3 className="text-xl font-bold mb-2 text-[#fb6400] group-hover:text-[#40e1d1] transition-colors duration-300">INTERNAL SCREENING</h3>
+              <p className="font-semibold text-[#1fffa5] font-Poppins">(Date to be Announced)</p>
+              <p className="mt-2 text-yellow-300 font-Poppins">Shortlisting based on the worth of the idea and the caliber of the team members</p>
             </div>
           </div>
 
@@ -139,10 +139,10 @@ export default function Home() {
             <div className="absolute -left-5 top-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center transition-transform transform group-hover:scale-125 shadow-lg">
               📅
             </div>
-            <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
-              <h3 className="text-xl font-bold mb-2 text-slate-900 group-hover:text-indigo-200 transition-colors duration-300">FACULTY SCREENING</h3>
-              <p className="font-semibold text-green-300">(Date to be Announced)</p>
-              <p className="mt-2 text-yellow-300">The final pitch! Convince the faculties and woohoo, the funds are yours.</p>
+            <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r to-[#5f4ff1] from-[#250f55] rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
+              <h3 className="text-xl font-bold mb-2 text-[#fb6400] group-hover:text-[#40e1d1] transition-colors duration-300">FACULTY SCREENING</h3>
+              <p className="font-semibold text-[#1fffa5] font-Poppins">(Date to be Announced)</p>
+              <p className="mt-2 text-yellow-300 font-Poppins">The final pitch! Convince the faculties and woohoo, the funds are yours.</p>
             </div>
           </div>
         </div>
