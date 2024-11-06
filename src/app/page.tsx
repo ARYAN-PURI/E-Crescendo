@@ -60,7 +60,7 @@ export default function Home() {
         <div className="text-md md:text-lg mb-6 text-center ">
           <RotatingText />
         </div>
-        <div className="flex flex-col md:flex-row justify-center items-center">
+        <div className="flex flex-col md:flex-row justify-center items-center ">
           <span className="text-fuchsia-200 text-3xl font-bold my-2">Organised By </span> <span className="text-fuchsia-200 text-3xl font-bold"> &nbsp; E-Cell NIT Hamirpur</span>
         </div>
 
