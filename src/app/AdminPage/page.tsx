@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 export default function AdminPage() {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [isCorrect, setIsCorrect] = useState(false);
+    const [isCorrect, setIsCorrect] = useState(true);
     const colorClasses = ['text-red-400', 'text-red-500', 'text-red-600', 'text-red-700', 'text-red-800', 'text-red-900'];
     const [user, setUser] = useState({
         userName: "",
@@ -155,7 +155,7 @@ export default function AdminPage() {
                                                             ))
                                                         }
                                                     </div>
-                                                    <Link href={val.uploadedfile} className="bg-blue-700 mt-3 font-semibold py-2 px-3 rounded text-white hover:bg-blue-300 hover:text-black">
+                                                    <Link href={val.uploadedfile} target="_blank" className="bg-blue-700 mt-3 font-semibold py-2 px-3 rounded text-white hover:bg-blue-300 hover:text-black">
                                                         Open Presentation
                                                     </Link>
                                                 </div>
