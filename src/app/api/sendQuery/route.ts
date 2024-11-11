@@ -5,7 +5,7 @@ export async function POST(req:NextRequest){
         const reqBody=await req.json();
         const mailOptions = {
           from: process.env.EMAIL,
-          to: 'entrepreneurshipcellnith@gmail.com',
+          to: 'ecell@nith.ac.in',
           subject: 'New Query Submitted',
           html: `
             <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
