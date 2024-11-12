@@ -81,17 +81,17 @@ export default function Home() {
               width={250}
               height={200} />
           </Link>
-          <a href="./guidelines/E-crescendo.pdf" download="E-Crescendo ecell-nith 2024 guidelines">
+          <a href="./guidelines/E-Crescendo.pdf" download="E-Crescendo ecell-nith 2024 guidelines">
             <Image
               className=' transition-transform duration-300 rounded-lg shadow-lg hover:scale-105 my-4 hover:border-white hover:border-2'
               src='/guide.png'
               alt='guidelines'
               width={250}
               height={200} />
+            
           </a>
           <div>
             <div>
-
             </div>
 
           </div>
@@ -120,7 +120,7 @@ export default function Home() {
             <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r to-[#5f4ff1] from-[#250f55] rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
               <h3 className="text-xl font-bold mb-2 text-[#fb6400] group-hover:text-[#40e1d1] transition-colors duration-300">REGISTRATION ENDS</h3>
               <p className="font-semibold text-[#1fffa5]">4 January 2025</p>
-              <p className="mt-2 text-yellow-300 font-Poppins">Last date for submitting you application </p>
+              <p className="mt-2 text-yellow-300 font-Poppins">Last date for submitting your application </p>
             </div>
           </div>
 

@@ -22,7 +22,9 @@ const NavBar: React.FC = () => {
               width={40}
               height={40}
             />
+          <a href="./guidelines/E-CrescendoBrochure.pdf" download="E-Crescendo ecell-nith 2024 Brochure">
             <span className="ml-2">E-Crescendo</span>
+          </a>
           </div>
 
           <div className="hidden xl:flex space-x-8">
@@ -57,22 +59,22 @@ const NavBar: React.FC = () => {
           }`}
       >
         <div className="bg-opacity-50 p-4 flex flex-col items-center z-50">
-          <a href="/#home" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110" onClick={toggleMenu}>
+          <a href="/#home" className="block font-Poppins my-2 text-2xl hover:text-indigo-400 text-white transition transform hover:scale-110" onClick={toggleMenu}>
             Home
           </a>
-          <a href="/#timeline" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110" onClick={toggleMenu}>
+          <a href="/#timeline" className="block font-Poppins my-2 text-2xl hover:text-indigo-400 text-white transition transform hover:scale-110" onClick={toggleMenu}>
             Timeline
           </a>
-          <a href="/#instructions" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110" onClick={toggleMenu}>
+          <a href="/#instructions" className="block font-Poppins my-2 text-2xl hover:text-indigo-400 text-white transition transform hover:scale-110" onClick={toggleMenu}>
             Instructions
           </a>
-          <a href="/#apply" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110" onClick={toggleMenu}>
+          <a href="/#apply" className="block font-Poppins my-2 text-2xl hover:text-indigo-400 text-white transition transform hover:scale-110" onClick={toggleMenu}>
             How to Apply
           </a>
-          <a href="/#contact" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110" onClick={toggleMenu}>
+          <a href="/#contact" className="block font-Poppins my-2 text-2xl hover:text-indigo-400 text-white transition transform hover:scale-110" onClick={toggleMenu}>
             Contact Us
           </a>
-          <a href="/AdminPage" className="block font-Poppins my-2 text-2xl text-cyan-400 transition transform hover:scale-110" onClick={toggleMenu}>
+          <a href="/AdminPage" className="block font-Poppins my-2 text-2xl hover:text-indigo-400 text-white transition transform hover:scale-110" onClick={toggleMenu}>
             Admin Panel
           </a>
         </div>
