@@ -119,7 +119,7 @@ export default function Home() {
             </div>
             <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r to-[#5f4ff1] from-[#250f55] rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
               <h3 className="text-xl font-bold mb-2 text-[#fb6400] group-hover:text-[#40e1d1] transition-colors duration-300">REGISTRATION ENDS</h3>
-              <p className="font-semibold text-[#1fffa5]">13 January 2025</p>
+              <p className="font-semibold text-[#1fffa5]">18 January 2025</p>
               <p className="mt-2 text-yellow-300 font-Poppins">Last date for submitting your application </p>
             </div>
           </div>
@@ -130,7 +130,7 @@ export default function Home() {
             </div>
             <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r to-[#5f4ff1] from-[#250f55] rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
               <h3 className="text-xl font-bold mb-2 text-[#fb6400] group-hover:text-[#40e1d1] transition-colors duration-300">INTERNAL SCREENING</h3>
-              <p className="font-semibold text-[#1fffa5] font-Poppins">1st Week of January</p>
+              <p className="font-semibold text-[#1fffa5] font-Poppins">3rd Week of January</p>
               <p className="mt-2 text-yellow-300 font-Poppins">Shortlisting based on the worth of the idea and the caliber of the team members</p>
             </div>
           </div>
@@ -141,7 +141,7 @@ export default function Home() {
             </div>
             <div className=" hover:border-white hover:border ml-8 p-6 bg-gradient-to-r to-[#5f4ff1] from-[#250f55] rounded-xl shadow-lg transition-transform transform group-hover:scale-105 group-hover:shadow-2xl duration-300">
               <h3 className="text-xl font-bold mb-2 text-[#fb6400] group-hover:text-[#40e1d1] transition-colors duration-300">FACULTY SCREENING</h3>
-              <p className="font-semibold text-[#1fffa5] font-Poppins">2nd-3rd Week of January</p>
+              <p className="font-semibold text-[#1fffa5] font-Poppins">Last Week of January</p>
               <p className="mt-2 text-yellow-300 font-Poppins">The final pitch! Convince the faculties and woohoo, the funds are yours.</p>
             </div>
           </div>
